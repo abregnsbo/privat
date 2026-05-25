@@ -25,47 +25,34 @@ from datetime import date, timedelta
 
 TODAY = date.today()
 
-# --- Real income: salary, benefits, tax refunds ---------------------------------
-INCOME_RE = re.compile(
-    r"L[øo]noverf[øo]rsel"
-    r"|\bSalary\b"
-    r"|B[øo]rne- og Ungeydelse"
-    r"|FK-Feriepenge"
-    r"|OVERSKYDENDE SKAT|SKATTEFORVALTNINGEN"
-    r"|Danmarks Tekniske"
-    r"|NTG A/S",
-    re.IGNORECASE,
-)
-
-# --- Transactions to skip entirely (income + inter-account transfers) -----------
-SKIP_RE = re.compile(
-    r"^Lønoverf[øo]rsel$"
-    r"|^Lønkonto$"
-    r"|^Budgetkonto$"
-    r"|^Til L[øo]nkonto"
-    r"|B[øo]rne- og Ungeydelse"
-    r"|FK-Feriepenge"
-    r"|^Rente$"
-    r"|OVERSKYDENDE SKAT"
-    r"|Velliv Foreningen"
-    r"|Skrotningsgodtg[øo]relse"
-    r"|Larysa Lunar Bank"
-    r"|restskat|^skat \d{4}\b"
-    r"|^Til Opsparingskonto"
-    r"|^Fra Opsparingskonto",
-    re.IGNORECASE,
-)
-
 # GASTECH is a gas (heating) company — always el-varme regardless of bank category
 GASTECH_RE = re.compile(r"GASTECH", re.IGNORECASE)
 
 # --- Text-pattern rules: first match wins ---------------------------------------
 TEXT_RULES = [
+    ("salary", re.compile(
+        r"L[øo]noverf[øo]rsel"
+        r"|\bSalary\b"
+        r"|FK-Feriepenge"
+        r"|restskat|^skat \d{4}\b"
+        r"|OVERSKYDENDE SKAT|SKATTEFORVALTNINGEN"
+        r"|Overf\. Skattestyrels|Til Frivillig ind skat"
+        r"|Danmarks Tekniske|NTG A/S",
+        re.IGNORECASE)),
+    ("transfers", re.compile(
+        r"^L[øo]nkonto$|^Budgetkonto$|^Til L[øo]nkonto|^Fra Budgetkonto"
+        r"|Larysa Lunar Bank"
+        r"|^Til Opsparingskonto|^Fra Opsparingskonto"
+        r"|Overf[øo]rsel",
+        re.IGNORECASE)),
+    ("other-income", re.compile(
+        r"B[øo]rne- og Ungeydelse|^Rente$",
+        re.IGNORECASE)),
     ("el-varme", re.compile(
         r"EVIDA|LYNGBY-TAARB[ÆAæa]K FORSYNING|NETTOPOWER|\bStr[øo]m\b",
         re.IGNORECASE)),
     ("forsikring", re.compile(
-        r"ALM\.?\s*BRAND FORSIKR|NEXT\s+forsikring|Police\s+\d+",
+        r"ALM\.?\s*BRAND FORSIKR|NEXT\s+forsikring|Police\s+\d+|Velliv Foreningen",
         re.IGNORECASE)),
     ("A-kasse", re.compile(
         r"CA A-KASSE|AKADEMIKERNES A-KASSE",
@@ -111,23 +98,23 @@ TEXT_RULES = [
         r"|Q8 |SHELL |CIRCLE K|STATOIL|UNO.X|OK BENZIN|BENZIN|\bDK OK\b|\bF24\b"
         r"|DSB AUTO|AUTOPASS"
         r"|autoværksted|autovaerksted|autoteknik|autocenter|Autohuset"
-        r"|GO.?ON|CARGLASS|bilsyn|TANK KAI DIGE",
+        r"|GO.?ON|CARGLASS|bilsyn|TANK KAI DIGE|Skrotningsgodtg[øo]relse",
         re.IGNORECASE)),
     ("sundhed", re.compile(
         r"tandl[æa]ge|TANDLAGE"
         r"|FITNESS WORLD|\bSATS\b|\bfitness\b|first fitness"
         r"|loebeshop|HEALTHWELL|\bterapi\b|GODZHAEVA"
-        r"|MASSAGE.TID|I care massage|MMSPORTSSTORE|SPORTSTIMING|PURE.?GYM|FitnessX",
+        r"|MASSAGE.TID|I care massage|MMSPORTSSTORE|SPORTSTIMING|PURE.?GYM|FitnessX|\biherb\b",
         re.IGNORECASE)),
     ("support", re.compile(
         r"JULIA GLINSKA|Svitli|Anton Sido[rt]ov|Kovsharev"
-        r"|DUDIKOV|Klym Jevlanov|VLADISMELNIX",
+        r"|DUDIKOV|Klym Jevlanov|VLADISMELNIX|\bDeepStateUA\b|\bMonodirectFJ",
         re.IGNORECASE)),
     ("abonnement", re.compile(
         r"Economist|Berlingske|\bB\.DK\b"
         r"|BOOKMATE|SAXO\.COM|GODADDY"
         r"|NETFLIX|HBO |DISNEY\+?|VIAPLAY|TV 2 PLAY|DPLAY"
-        r"|YOUTUBE|SPOTIFY|APPLE.*MUSIC",
+        r"|YOUTUBE|SPOTIFY|APPLE.*MUSIC|SKY.?SHOWTIME",
         re.IGNORECASE)),
     ("ferie", re.compile(
         r"^skiferie|\bferie\b"
@@ -143,11 +130,8 @@ TEXT_RULES = [
 ]
 
 
-def classify(text: str, bank_main_cat: str, bank_cat: str, amount: float) -> str | None:
-    """Return category name, or None to skip this transaction."""
-    if SKIP_RE.search(text):
-        return None
-
+def classify(text: str, bank_main_cat: str, bank_cat: str, amount: float) -> str:
+    """Return category name for this transaction."""
     if GASTECH_RE.search(text):
         return "el-varme"
 
@@ -168,9 +152,9 @@ def classify(text: str, bank_main_cat: str, bank_cat: str, amount: float) -> str
 
     # VDK prefix = card used abroad → ferie (with exceptions)
     if text.startswith("VDK "):
-        if re.search(r"Lygten Bazar", text, re.IGNORECASE):
+        if re.search(r"Lygten Bazar|Mariam M Marked|MOB\.PAY\*(FOOD|CAFE)", text, re.IGNORECASE):
             return "mad"
-        if re.search(r"Zara|\bHM\b", text, re.IGNORECASE):
+        if re.search(r"Zara|\bHM\b|\bZalando\b|\bApotek\b|nogler og haele", text, re.IGNORECASE):
             return "andet"
         return "ferie"
 
@@ -205,11 +189,14 @@ def _parse_date(s: str) -> date:
 
 
 def read_csv(path: str):
-    """Yield transaction dicts from a Jyske Bank semicolon CSV export."""
+    """Yield transaction dicts from a Jyske Bank semicolon CSV export.
+
+    CSV is sorted newest-first; line numbers start at 2 (row 1 is the header).
+    """
     with open(path, newline="", encoding="utf-8-sig") as f:
         reader = csv.reader(f, delimiter=";")
         next(reader, None)  # skip header row
-        for row in reader:
+        for lineno, row in enumerate(reader, start=2):
             if len(row) < 3 or not row[0].strip():
                 continue
             try:
@@ -217,37 +204,13 @@ def read_csv(path: str):
                     "date":     _parse_date(row[0]),
                     "text":     row[1].strip(),
                     "amount":   _parse_amount(row[2]),
+                    "balance":  _parse_amount(row[3]) if len(row) > 3 else 0.0,
                     "main_cat": row[7].strip() if len(row) > 7 else "",
                     "cat":      row[8].strip() if len(row) > 8 else "",
+                    "lineno":   lineno,
                 }
             except (ValueError, IndexError):
                 continue
-
-
-def remove_transfers(files_txs: list[list[dict]]) -> list[dict]:
-    """Cancel matching cross-account debit/credit pairs (same date, same absolute amount)."""
-    tagged: list[tuple[int, dict]] = []
-    for fi, txs in enumerate(files_txs):
-        for tx in txs:
-            tagged.append((fi, tx))
-
-    groups: dict[tuple, list[int]] = defaultdict(list)
-    for i, (fi, tx) in enumerate(tagged):
-        groups[(tx["date"], round(abs(tx["amount"]), 2))].append(i)
-
-    to_remove: set[int] = set()
-    for indices in groups.values():
-        by_file: list[list[int]] = [[], []]
-        for i in indices:
-            by_file[tagged[i][0]].append(i)
-        for neg_fi, pos_fi in ((0, 1), (1, 0)):
-            negs = [i for i in by_file[neg_fi] if tagged[i][1]["amount"] < 0]
-            poss = [i for i in by_file[pos_fi] if tagged[i][1]["amount"] > 0]
-            for j in range(min(len(negs), len(poss))):
-                to_remove.add(negs[j])
-                to_remove.add(poss[j])
-
-    return [tx for i, (_, tx) in enumerate(tagged) if i not in to_remove]
 
 
 # --- Main -----------------------------------------------------------------------
@@ -311,10 +274,23 @@ def main() -> None:
     andet_tx:  list[tuple] = []
     detail_tx: list[tuple] = []
     search_tx: list[tuple] = []
-    n_total = n_skip = 0
+    n_total = 0
+    n_parsed = 0  # rows successfully parsed (before categorisation)
 
     files_txs = [list(read_csv(f)) for f in files]
-    all_rows = remove_transfers(files_txs) if len(files) == 2 else [tx for txs in files_txs for tx in txs]
+
+    # Compute start/end balances across all accounts.
+    # CSVs are sorted newest-first: first row = most recent (end), last row = oldest (start).
+    # Using CSV order avoids ambiguity when multiple transactions share the same date.
+    bal_start = bal_end = 0.0
+    for file_txs in files_txs:
+        if not file_txs:
+            continue
+        bal_end   += file_txs[0]["balance"]
+        bal_start += file_txs[-1]["balance"] - file_txs[-1]["amount"]
+
+    all_rows = [tx for txs in files_txs for tx in txs]
+    n_parsed = len(all_rows)
 
     for row in all_rows:
         n_total += 1
@@ -322,53 +298,27 @@ def main() -> None:
         p = period_key(d)
 
         # Determine effective category once per transaction
-        if row["amount"] > 0 and (
-            INCOME_RE.search(row["text"])
-            or (re.search(r"Axel Bogdan Bregnsbo", row["text"], re.IGNORECASE)
-                and round(row["amount"]) == 38495)
-        ):
+        if (re.search(r"Axel Bogdan Bregnsbo", row["text"], re.IGNORECASE)
+                and round(row["amount"]) == 38495):
             eff_cat = "salary"
         elif (d.year == 2024 and d.month == 3
               and re.search(r"Faktura", row["text"], re.IGNORECASE)
               and round(abs(row["amount"])) == 12000):
             eff_cat = "ferie"
         else:
-            eff_cat = classify(row["text"], row["main_cat"], row["cat"], row["amount"]) or "skip"
+            eff_cat = classify(row["text"], row["main_cat"], row["cat"], row["amount"])
             if eff_cat == "andet" and row["amount"] > 0:
-                if re.search(r"Overf[øo]rsel", row["text"], re.IGNORECASE):
-                    eff_cat = "transfers"
-                else:
-                    eff_cat = "other-income"
+                eff_cat = "other-income"
 
         if search_re and search_re.search(row["text"]):
             search_tx.append((d, row["text"], row["amount"], eff_cat))
 
-        if eff_cat == "salary":
-            salary[p] += row["amount"]
-            if det_cat == "salary":
-                if det_period is None or p.startswith(det_period):
+        if eff_cat in ("salary", "transfers", "other-income"):
+            {"salary": salary, "transfers": transfers, "other-income": other_income}[eff_cat][p] += row["amount"]
+            if det_cat == eff_cat:
+                dm = f"{d.year}-{d.month:02d}"
+                if det_period is None or dm.startswith(det_period):
                     detail_tx.append((d, p, row["text"], row["amount"]))
-            n_skip += 1
-            continue
-
-        if eff_cat == "transfers":
-            transfers[p] += row["amount"]
-            if det_cat == "transfers":
-                if det_period is None or p.startswith(det_period):
-                    detail_tx.append((d, p, row["text"], row["amount"]))
-            n_skip += 1
-            continue
-
-        if eff_cat == "other-income":
-            other_income[p] += row["amount"]
-            if det_cat == "other-income":
-                if det_period is None or p.startswith(det_period):
-                    detail_tx.append((d, p, row["text"], row["amount"]))
-            n_skip += 1
-            continue
-
-        if eff_cat == "skip":
-            n_skip += 1
             continue
 
         totals[eff_cat][p] += -row["amount"]
@@ -377,13 +327,23 @@ def main() -> None:
             andet_tx.append((d, p, row["text"], row["amount"]))
 
         if det_cat and eff_cat == det_cat:
-            if det_period is None or p.startswith(det_period):
+            dm = f"{d.year}-{d.month:02d}"
+            if det_period is None or dm.startswith(det_period):
                 detail_tx.append((d, p, row["text"], row["amount"]))
 
+    total_exp = sum(sum(ps.values()) for ps in totals.values())
+    total_inc = sum(salary.values()) + sum(transfers.values()) + sum(other_income.values())
+    net_change  = bal_end - bal_start
+    net_tracked = total_inc - total_exp
+    discrepancy = net_change - net_tracked
+    if abs(discrepancy) > 0.01:
+        print(f"ERROR: balance and categories do not reconcile  (discrepancy: {discrepancy:,.4f})", file=sys.stderr)
+
     if args.verbose:
-        cats = n_total - n_skip
-        print(f"Processed {n_total} rows; skipped {n_skip}; categorised {cats}",
-              file=sys.stderr)
+        print(f"Parsed {n_parsed} rows, categorised {n_total}", file=sys.stderr)
+        print(f"Balance:     start {bal_start:>12,.0f}  end {bal_end:>12,.0f}  net change  {net_change:>12,.0f}", file=sys.stderr)
+        print(f"Categories:    exp {total_exp:>12,.0f}  inc {total_inc:>12,.0f}  net tracked {net_tracked:>12,.0f}", file=sys.stderr)
+        print(f"Discrepancy: {discrepancy:>16,.4f}  OK", file=sys.stderr)
 
     # --- Output -----------------------------------------------------------------
 
