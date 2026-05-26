@@ -28,6 +28,44 @@ TODAY = date.today()
 # GASTECH is a gas (heating) company — always el-varme regardless of bank category
 GASTECH_RE = re.compile(r"GASTECH", re.IGNORECASE)
 
+# Positive patterns for genuine travel expenses → ferie.
+# Used both in TEXT_RULES and in the VDK block so that VDK transactions not matched
+# here fall through to bank-category rules instead of defaulting to ferie.
+TRAVEL_RE = re.compile(
+    # Freeform travel notes (manually entered bank labels)
+    r"^skiferie|^ferie:|\bferie\b|flybillet|flyrejse|\bRejser\b"
+    # Airlines and flight booking
+    r"|\bNORWEGIAN\s+A\b|\bRYANAIR\b|\bSAS\b|\bEASYJET\b|\bWIZZ\s+AIR\b|\bTRANSAVIA\b|\bFLIXBUS\b"
+    r"|lastminute|Travellink|kiwi\.com|\bESKY\b"
+    # Airport infrastructure: transport, food, shops
+    r"|\bAIRPORT\b|\bLUFTHAVN\b|STANSTED"
+    r"|\bFLYTOGET\b|HMSHost|DUTY.?FREE|\bDUFRITAL\b|AELIA\s+DUTY\s+FREE"
+    r"|\bENTUR\b|BLQ\s+Schengen|FASTY\s+APT|RELAY\d{6}PV"
+    # Hotels and accommodation
+    r"|hotel|BKG\*|booking\.com|\bBOOKING\b|\bHOSTDOMUS\b"
+    r"|\bPREMIER\s+INN\b|\bPREMIER\s+SUITES\b|\bComwell\b|\bSINATUR\b"
+    r"|\bSONDER\b|\bMAEVA\b|\bBROHOLM\s+SLOT\b|LONDON\s+TOWER"
+    # Car rental
+    r"|ENTERPRISE\s+RENT.?A.?CAR|Cars\s+on\s+Booking"
+    # Public transport while travelling
+    r"|EDINBURGH\s+TRAMS|MTA\*METROCARD|NYC\s+FERRY|\bMEGABUS\b"
+    r"|\bOMIO\b|ITALIARAIL|TPG\s+Transports\s+Publics|TFL\s+TRAVEL"
+    r"|TPER\s+SPA|AUTOST\s+DIREZIONE|AUTOVIA\s+BERGAMO"
+    r"|PAYPAL\s*\*STANSTED|LONDON.?TAXI"
+    # Ferries
+    r"|\bFERRYHOPPER\b|\bMOBY\b"
+    # Ski and mountain
+    r"|GOITSCHEL|\bSESTRIERE\b|LA\s+CIME|CARREFOUR\s+PECLET"
+    r"|CHALET\s+DE\s+THORENS|\bSHERPA\b|\bLIFT\s+CLUB\b|\bALPETTE\b|\bV\s+T\s+S\b"
+    # Tourist attractions and museum tickets
+    r"|\bUFFIZI\b|MIDATICKET|ESERCIZIO\s+PROMOZIONE\s+TUR|PARCO\s+METRI\s+VILLASIMIUS"
+    # Events and experiences (ticketed activities while travelling)
+    r"|\bDICE\.FM\b|FEVER\*"
+    # Travel admin
+    r"|UKVI\s+ETAMOB",
+    re.IGNORECASE
+)
+
 # --- Text-pattern rules: first match wins ---------------------------------------
 TEXT_RULES = [
     ("salary", re.compile(
@@ -81,9 +119,7 @@ TEXT_RULES = [
         r"|FLUGGER|FLÜGGER|R[øo]VERK[øo]B|Pudser|Ejendomsskattel[åa]n|LEAKBOT"
         r"|\bHARALD\s+NYBORG\b|\bSilvan\b|\bJOHANNESFOG",
         re.IGNORECASE)),
-    ("ferie", re.compile(
-        r"LONDON.?TAXI",
-        re.IGNORECASE)),
+    ("ferie", TRAVEL_RE),
     ("transport", re.compile(
         r"taxa|taxi|rejsekort|DRIVR|DANTAXI",
         re.IGNORECASE)),
@@ -107,25 +143,15 @@ TEXT_RULES = [
         r"|MASSAGE.TID|I care massage|MMSPORTSSTORE|SPORTSTIMING|PURE.?GYM|FitnessX|\biherb\b",
         re.IGNORECASE)),
     ("support", re.compile(
-        r"JULIA GLINSKA|Svitli|Anton Sido[rt]ov|Kovsharev"
-        r"|DUDIKOV|Klym Jevlanov|VLADISMELNIX|\bDeepStateUA\b|\bMonodirectFJ",
+        r"JULIA GLINSKA|Svitli|Anton Sido[rt]ov|ANTONSIDORO|Kovsharev"
+        r"|DUDIKOV|Klym Jevlanov|VLADISMELNIX|\bDeepStateUA\b|\bMonodirectFJ"
+        r"|\bMONOBANK\b|STERNENKO",
         re.IGNORECASE)),
     ("abonnement", re.compile(
         r"Economist|Berlingske|\bB\.DK\b"
         r"|BOOKMATE|SAXO\.COM|GODADDY"
         r"|NETFLIX|HBO |DISNEY\+?|VIAPLAY|TV 2 PLAY|DPLAY"
         r"|YOUTUBE|SPOTIFY|APPLE.*MUSIC|SKY.?SHOWTIME",
-        re.IGNORECASE)),
-    ("ferie", re.compile(
-        r"^skiferie|\bferie\b"
-        r"|STANSTED|AIRPORT|LUFTHAVN"
-        r"|RYANAIR|\bSAS\b|NORWEGIAN|EASYJET|WIZZ AIR|TRANSAVIA|FLIXBUS"
-        r"|LONDON TOWER|FERRYHOPPER|LA CIME|DICE\.FM|HOSTDOMUS|lastminute"
-        r"|UFFIZI|CARREFOUR"
-        r"|PAYPAL\s*\*STANSTED"
-        r"|hotel|BKG\*|booking\.com|\bBOOKING\b"
-        r"|flybillet|flyrejse|\bRejser\b|Travellink"
-        r"|GOITSCHEL|SESTRIERE|\bMAEVA\b|kiwi\.com|AUTOST DIREZIONE",
         re.IGNORECASE)),
 ]
 
@@ -150,13 +176,15 @@ def classify(text: str, bank_main_cat: str, bank_cat: str, amount: float) -> str
         if rx.search(text):
             return cat
 
-    # VDK prefix = card used abroad → ferie (with exceptions)
+    # VDK prefix = physical card swipe; only route to ferie if TRAVEL_RE matches.
+    # Everything else falls through to bank-category rules and the andet default.
     if text.startswith("VDK "):
         if re.search(r"Lygten Bazar|Mariam M Marked|MOB\.PAY\*(FOOD|CAFE)", text, re.IGNORECASE):
             return "mad"
         if re.search(r"Zara|\bHM\b|\bZalando\b|\bApotek\b|nogler og haele", text, re.IGNORECASE):
             return "andet"
-        return "ferie"
+        if TRAVEL_RE.search(text):
+            return "ferie"
 
     # Explicit andet overrides — prevent bank-category fallback from misfiring
     if re.search(r"\bMagasin\b", text, re.IGNORECASE):
@@ -232,6 +260,9 @@ def main() -> None:
     grp.add_argument("-r", "--running", action="store_true",
                      help="Group by rolling 12-month windows relative to today"
                           " (last 12 months, 12-24 months ago, …)")
+    grp.add_argument("-a", "--avg", action="store_true",
+                     help="Monthly average: like -y but each value divided by the number of"
+                          " months spanned by data in that year")
 
     ap.add_argument("-u", "--unrecognized", action="store_true",
                     help="List 'andet' transactions aggregated by text (count + total)")
@@ -267,10 +298,11 @@ def main() -> None:
 
     search_re = re.compile(args.s, re.IGNORECASE) if args.s else None
 
-    totals:       dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
-    salary:       dict[str, float] = defaultdict(float)
-    transfers:    dict[str, float] = defaultdict(float)
-    other_income: dict[str, float] = defaultdict(float)
+    totals:         dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    salary:         dict[str, float] = defaultdict(float)
+    transfers:      dict[str, float] = defaultdict(float)
+    other_income:   dict[str, float] = defaultdict(float)
+    dates_per_year: dict[int, list[int]] = defaultdict(list)
     andet_tx:  list[tuple] = []
     detail_tx: list[tuple] = []
     search_tx: list[tuple] = []
@@ -296,6 +328,7 @@ def main() -> None:
         n_total += 1
         d = row["date"]
         p = period_key(d)
+        dates_per_year[d.year].append(d.month)
 
         # Determine effective category once per transaction
         if (re.search(r"Axel Bogdan Bregnsbo", row["text"], re.IGNORECASE)
@@ -427,6 +460,53 @@ def main() -> None:
                     row += f"{v:{col_w},.0f}" if v else f"{'':>{col_w}}"
                 print(row)
             print()
+
+    elif args.avg:
+        # Monthly averages: like -y but divided by months spanned in each year.
+        months_per_year = {yr: max(ms) - min(ms) + 1
+                           for yr, ms in dates_per_year.items()}
+        cols = all_periods  # sorted year strings
+
+        def _hdr(p: str) -> str:
+            return f"{p}({months_per_year.get(int(p), 12)}mo)"
+
+        col_w = max(10, max(len(_hdr(p)) for p in cols) + 2)
+        hdr = f"{'':>{cat_w}}" + "".join(f"{_hdr(p):>{col_w}}" for p in cols)
+        sep = "-" * len(hdr)
+        print(hdr)
+        print(sep)
+        for cat in all_cats:
+            row = f"{cat:>{cat_w}}"
+            for p in cols:
+                v = totals[cat].get(p, 0.0)
+                n = months_per_year.get(int(p), 12)
+                row += f"{v / n:{col_w},.0f}" if v else f"{'':>{col_w}}"
+            print(row)
+
+        print()
+        total_exp_row = f"{'total-exp':>{cat_w}}"
+        for p in cols:
+            v = sum(totals[cat].get(p, 0.0) for cat in all_cats)
+            n = months_per_year.get(int(p), 12)
+            total_exp_row += f"{v / n:{col_w},.0f}" if v else f"{'':>{col_w}}"
+        print(total_exp_row)
+
+        print()
+        for label, src in (("salary", salary), ("transfers", transfers), ("other-income", other_income)):
+            summary_row = f"{label:>{cat_w}}"
+            for p in cols:
+                v = src.get(p, 0.0)
+                n = months_per_year.get(int(p), 12)
+                summary_row += f"{v / n:{col_w},.0f}" if v else f"{'':>{col_w}}"
+            print(summary_row)
+
+        print()
+        total_income_row = f"{'total-income':>{cat_w}}"
+        for p in cols:
+            v = salary.get(p, 0.0) + transfers.get(p, 0.0) + other_income.get(p, 0.0)
+            n = months_per_year.get(int(p), 12)
+            total_income_row += f"{v / n:{col_w},.0f}" if v else f"{'':>{col_w}}"
+        print(total_income_row)
 
     else:
         # --year or --running: rows = categories, columns = periods
