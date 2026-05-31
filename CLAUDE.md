@@ -111,3 +111,34 @@ a specific shop name, `\bVVS\b` rather than one plumber.
 Personal transfers (Eivind, Viktor, various MobilePay to named individuals),
 IKEA, Elgiganten (electronics), clothing (Zara, Zalando, Netlingeri), BET365 (gambling),
 Visa Credit card payments, pharmacies (Apotek), and other one-off purchases with no clear category.
+
+---
+
+## Mortgage model: `economy/mortgage.py`
+
+Annuity mortgage calculator for scenario analysis (refinancing, rate changes, etc.).
+Reference images of the Jyske Bank loan screens are in `economy/loan_overview.png` and
+`economy/load_repayment_details.png`.
+
+### Current loan parameters (Jyske Fast 1%, loan no. 41064296)
+- **Principal**: 3,026,000 DKK (original)
+- **Interest rate**: 1.00% p.a. | **Admin (bidragssats)**: 0.3250% p.a.
+- **Term**: 20 years, quarterly payments (80 total); first payment 2019-09-30
+- **Tax rate**: 25.60% (Gennemsnitskommune)
+- **Snapshot**: Q2 2026 (2026-06-30) is payment no. 28; outstanding after = 2,027,669.42 DKK
+
+### Key design notes
+- PMT (annuity component) = interest + instalment only; admin margin added separately per quarter on the outstanding balance, so total payment decreases over time.
+- `CURRENT_LOAN` is calibrated from observed Q2 2026 bank data (PMT = 41,780.89, balance before Q2 = 2,064,289.59) rather than the closed-form formula, because 27 quarters of øre-rounding drifts the formula ~7,200 DKK off.
+- Admin in 2038–2039 will not match the bank's projection — the bank appears to apply a higher tiered bidragssats at very low LTV, which is not documented.
+
+### CLI
+```
+python mortgage.py              # yearly table, monthly after-tax cost + PV rows
+python mortgage.py -q           # quarterly detail
+python mortgage.py --full       # full schedule from 2019 origination
+python mortgage.py --discount 0.04 0.03 0.02   # custom discount rates for PV
+```
+
+Output shows monthly after-tax cost per year, plus PV rows (default: 4%, 3%, 2%)
+for comparing scenarios. Designed to add extra columns for alternative loan scenarios.
