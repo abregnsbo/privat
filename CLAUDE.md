@@ -38,9 +38,19 @@ bank_analyse.py [-m|-y|-r] [-u|-U] [-d CAT[:PERIOD]] [-s PATTERN] [-v] [FILE ...
 | `-U` | List `andet` transactions individually (one line per transaction) |
 | `-d CAT[:PERIOD]` | List individual transactions for CAT; PERIOD is a prefix, e.g. `mad:2025-06` |
 | `-s PATTERN` | Search all transactions by text regex, show category assigned |
+| `--budget-only` | Withdrawal report for the Budgetkonto account only (see below) |
 | `-v` | Print processing stats and balance reconciliation to stderr |
 
 `-d` and `-u` always show `YYYY-MM` regardless of grouping mode.
+
+#### `--budget-only` withdrawal mode
+Self-contained report of money leaving the **Budgetkonto** account only (filtered by the
+`AccountName` CSV column, so it's safe to pass both files). Every debit is counted as a
+withdrawal — **including transfers out to Lønkonto** (shown as the `transfers` row), which
+the normal expense view excludes. Categories use the same `classify()` logic; rows are
+sorted by size. Honours the `-m`/`-y`/`-r` grouping flags for the columns and adds a
+`total-withdrawal` row plus a `per month` row (period total ÷ number of months with data
+in that period). Skips balance reconciliation. Example: `bank_analyse.py --budget-only -r`.
 
 A reconciliation error (balance vs. categorised totals discrepancy > 0.01) is **always** printed to stderr, not just under `-v`.
 

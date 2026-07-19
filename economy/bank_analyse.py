@@ -4,13 +4,14 @@ Analyse bank CSV exports from Jyske Bank (Budgetkonto + Lønkonto).
 Categorises transactions and reports totals by period.
 
 Usage:
-  bank_analyse.py [-m|-y|--running N] [-u] [-d CAT[:PERIOD]] [-v] FILE ...
+  bank_analyse.py [-m|-y|--running N] [-u] [-d CAT[:PERIOD]] [--budget-only] [-v] FILE ...
 
 Examples:
   bank_analyse.py -m Budgetkonto_*.csv Lønkonto_*.csv
   bank_analyse.py --running 1 Budgetkonto_*.csv Lønkonto_*.csv
   bank_analyse.py -u Budgetkonto_*.csv Lønkonto_*.csv
   bank_analyse.py -d mad:2025-06 Lønkonto_*.csv
+  bank_analyse.py --budget-only -r Budgetkonto_*.csv
 """
 
 from __future__ import annotations
@@ -233,6 +234,7 @@ def read_csv(path: str):
                     "text":     row[1].strip(),
                     "amount":   _parse_amount(row[2]),
                     "balance":  _parse_amount(row[3]) if len(row) > 3 else 0.0,
+                    "account":  row[6].strip() if len(row) > 6 else "",
                     "main_cat": row[7].strip() if len(row) > 7 else "",
                     "cat":      row[8].strip() if len(row) > 8 else "",
                     "lineno":   lineno,
@@ -273,6 +275,10 @@ def main() -> None:
                          " optionally filter to PERIOD prefix, e.g. -d mad:2025-06")
     ap.add_argument("-s", metavar="PATTERN",
                     help="Regex search all transactions by text, showing assigned category")
+    ap.add_argument("--budget-only", action="store_true",
+                    help="Withdrawal report for the Budgetkonto account only: every debit"
+                         " (incl. transfers out to Lønkonto) grouped by category, with a"
+                         " total-withdrawal row and a per-month average. Honours -m/-y/-r.")
     ap.add_argument("-v", "--verbose", action="store_true",
                     help="Print processing summary to stderr")
     args = ap.parse_args()
@@ -323,6 +329,77 @@ def main() -> None:
 
     all_rows = [tx for txs in files_txs for tx in txs]
     n_parsed = len(all_rows)
+
+    # --- Budgetkonto withdrawal report -----------------------------------------
+    # Self-contained: every debit on the Budgetkonto account (including transfers
+    # out to Lønkonto) counted as a withdrawal, grouped by category and period.
+    if args.budget_only:
+        wtotals: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+        months_seen: dict[str, set] = defaultdict(set)
+        for row in all_rows:
+            if "budget" not in row["account"].lower():
+                continue
+            if row["amount"] >= 0:
+                continue  # withdrawals (debits) only
+            d = row["date"]
+            p = period_key(d)
+            # same hard-coded overrides as the main accounting loop
+            if (re.search(r"Axel Bogdan Bregnsbo", row["text"], re.IGNORECASE)
+                    and round(row["amount"]) == 38495):
+                cat = "salary"
+            elif (d.year == 2024 and d.month == 3
+                  and re.search(r"Faktura", row["text"], re.IGNORECASE)
+                  and round(abs(row["amount"])) == 12000):
+                cat = "ferie"
+            else:
+                cat = classify(row["text"], row["main_cat"], row["cat"], row["amount"])
+            wtotals[cat][p] += -row["amount"]
+            months_seen[p].add((d.year, d.month))
+
+        cats = sorted(wtotals, key=lambda c: -sum(wtotals[c].values()))
+        periods = sorted({p for c in wtotals.values() for p in c})
+        if args.running:
+            cols = sorted(periods, key=lambda p: int(p.split()[0]))
+        else:
+            cols = periods
+
+        # -a: divide every value by the number of months with data in that period,
+        # turning the whole table into monthly averages (as in the normal -a view).
+        def divisor(p: str) -> int:
+            return (len(months_seen[p]) or 1) if args.avg else 1
+
+        def col_hdr(p: str) -> str:
+            return f"{p}({len(months_seen[p])}mo)" if args.avg else p
+
+        labels = cats + ["total-withdrawal", "per month"]
+        cat_w = max(len(c) for c in labels) + 2
+        col_w = max(10, max((len(col_hdr(p)) for p in cols), default=0) + 2)
+        hdr = f"{'':>{cat_w}}" + "".join(f"{col_hdr(p):>{col_w}}" for p in cols)
+        print("Budgetkonto withdrawals (debits only)")
+        print(hdr)
+        print("-" * len(hdr))
+        for cat in cats:
+            line = f"{cat:>{cat_w}}"
+            for p in cols:
+                v = wtotals[cat].get(p, 0.0)
+                line += f"{v / divisor(p):{col_w},.0f}" if v else f"{'':>{col_w}}"
+            print(line)
+
+        print("-" * len(hdr))
+        tot_line = f"{'total-withdrawal':>{cat_w}}"
+        for p in cols:
+            v = sum(wtotals[c].get(p, 0.0) for c in cats)
+            tot_line += f"{v / divisor(p):{col_w},.0f}" if v else f"{'':>{col_w}}"
+        print(tot_line)
+        # Redundant under -a (every row is already a monthly average).
+        if not args.avg:
+            avg_line = f"{'per month':>{cat_w}}"
+            for p in cols:
+                v = sum(wtotals[c].get(p, 0.0) for c in cats)
+                n = len(months_seen[p]) or 1
+                avg_line += f"{v / n:{col_w},.0f}" if v else f"{'':>{col_w}}"
+            print(avg_line)
+        return
 
     for row in all_rows:
         n_total += 1
