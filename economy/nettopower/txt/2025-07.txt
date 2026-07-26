@@ -1,0 +1,173 @@
+                                                                               nettopower ApS
+                                                                     Ørestads Boulevard 67
+
+                                                                           2300 København S
+                                                                                   CVR: 34221162
+
+                  Dit juni overblik
+
+                      Axel Bregnsbo
+
+Malmmosevej 87A,  Gennemsnitspris på den rå strøm  57,29 øre/kWh
+     2830 Virum              Dit forbrug var på      344 kWh
+
+Malmmosevej 87A,  Gennemsnitspris på den rå gas    510,70 øre/m³
+     2830 Virum             Dit forbrug var på         92 m³
+
+nettopower ApS | nettopower.dk | kundeservice@nettopower.dk | 70 500 500 | Side 1 af 5
+                                                                                           nettopower ApS
+                                                                                  Ørestads Boulevard 67
+
+                                                                                       2300 København S
+                                                                                               CVR: 34221162
+
+Opgørelsesdato                         16.07.2025                                        Axel Bregnsbo
+Opgørelsesnummer                       1741051                                    Malmmosevej 87A,
+Kundenummer                            152240
+Periode                                Juni 2025                                             2830 Virum
+
+Forbrugsoversigt aftagenr.             74113617656
+Installationsadresse                   Malmmosevej 87A, 2830 Virum
+Forventet årsforbrug                   6.310 kWh
+
+                            El-forbrug, timeafregnet
+
+Dato        Forbru gsperiode                                            Forbru g   Enhedspris           Beløb
+30.06.2025  01.06.2025 - 30.06.2025                                     344 kWh   57,29 øre/kWh
+            El variabel pris (El m/variabel pris)                                 33,37 øre/kWh      197,16 kr.
+            T ransport tariff                                                     72,00 øre/kWh      114,83 kr.
+            T ransport fast                                                                           55,95 kr.
+            El-afgift                                                                1,63 kr/kWh*   247,77 kr.
+            Netadministration                                                               (25%)
+            Netadministration                                                                          0,00 kr.
+                                                                                    Inkl. moms        14,40 kr.
+                                                            Nettobeløb
+                                                                                                     630,11 kr.
+* Enhedsprisen eksl. faste omkostninger (1,83 kr/kWh                                                 157,52 kr.
+                                                                                                    787,63 kr.
+inkl. faste omkostninger). Beregninger er gennemført Moms
+
+med ere decimaler end vist på opgørelsen.  Totalbeløb
+
+            nettopower ApS | nettopower.dk | kundeservice@nettopower.dk | 70 500 500 | Side 2 af 5
+                                                                                          nettopower ApS
+                                                                                 Ørestads Boulevard 67
+
+                                                                                      2300 København S
+                                                                                              CVR: 34221162
+
+Forbrugsoversigt aftagenr.                          98 0 0 27 8 48 98
+Installationsadresse                                Malmmosevej 87A, 2830 Virum
+Forventet årsforbrug                                3.390 m³
+
+                                           Gas-forbrug, estimeret
+
+Dato        Forbru gsperiode                                     Forbru g        Enhedspris             Beløb
+30.06.2025  01.06.2025 - 30.06.2025                              92 m³
+            Gas variabel pris (Gas)                                              510,70 øre/m³      469,15 kr.
+                                                                                      5,11 kr/m³*   469,15 kr.
+* Enhedsprisen eksl. faste omkostninger (5,11 kr/m³  Nettobeløb                           (25%)      117,29 kr.
+                                                                                                    586,44 kr.
+inkl. faste omkostninger). Beregninger er gennemført Moms                         Inkl. moms
+
+med ere decimaler end vist på opgørelsen.            Totalbeløb
+
+Dato                           Gebyrer i perioden                                                   Beløb
+24.06.2025                                                                                          9,75 kr.
+            Beskrivelse
+            Betalingsservicegebyr                                                                   9,75 kr.
+
+                                                     I alt
+
+                            Total for alle installationer
+
+Forbru g                                                                                            1.374,07 kr.
+                                                                                                    1.374,07 kr.
+Mængder og priser er beregnet med ere decimaler      I alt
+end vist.
+
+                                          Beskeder
+
+Nærværende faktura er blevet overført til Norra Finans Sverige AB (NAB) (559020-8509),
+som på sin side har pantsat fakturaen til Moank AB (Moank) (559000-0237). Betaling
+med frigørende virkning kan kun ske til den konto, som Moank skriftligt har informeret
+om. Medmindre andet er skriftligt angivet af Moank, skal betaling ske til nettopower ApS i
+henhold til betalingsoplysningerne på denne faktura. nettopower ApS modtager
+betalingen som repræsentant for NAB og Moank. Betaling sker således uændret og på
+helt sædvanlig vis til nettopower ApS.
+
+            nettopower ApS | nettopower.dk | kundeservice@nettopower.dk | 70 500 500 | Side 3 af 5
+                                                                                                                   nettopower ApS
+                                                                                                         Ørestads Boulevard 67
+
+                                                                                                               2300 København S
+                                                                                                                       CVR: 34221162
+
+  Energinet ændrer i den måde elforbrugere med elvarme og et
+        forbrug over 4000 kWh får beregnet reduceret elafgift
+
+På baggrund af en udtalelse fra skattestyrelsen ændrer Energinet i metoden for beregning af
+reduceret elafgift til elvarmekunder. Ændringen berører alle elvarmekunder uanset
+leverandørforhold.
+
+Alle elforbrugere med forbrug over 4000 kWh kan få reduceret elafgift, når de har elvarme og
+det er registreret i Energinets DataHub og opfylder betingelserne i lovgivningen. Den nye
+beregningsmetode medfører ikke, at elforbrugere med forbrug over 4000 kWh samlet set får
+større eller mindre afregning, men reduktion i afgift fordeles fremover anderledes hen over året.
+
+Det sker efter en udtalelse fra Skattestyrelsen.
+
+Hidtil har Energinet fordelt den reducerede afgift jævnt hen over året, men Skattestyrelsen har
+afgjort, at det ikke var i overensstemmelse med intentionerne i elafgiftsloven. Derfor ændrer
+Energinet nu praksis, så elforbrugere skal betale fuld elafgift af de første forbrugte 4.000 kWh,
+og herefter reduceret elafgift af resten af elforbruget i kalenderåret.
+
+Det vil for elforbrugere med elvarme og reduceret elafgift typisk betyde større elregninger først
+på året, mens regningerne bliver mindre i den sidste del af året. Denne ændring indføres nu,
+hvilket betyder at samtlige elforbrugere med elvarme bør påregne en efterregulering fra deres
+elselskab i de kommende måneder.
+
+Din konto hos nettopower
+
+Periodens forbrug  -1.374,07 kr.
+Periodens gebyrer       -9,75 kr.
+
+nettopower ApS | nettopower.dk | kundeservice@nettopower.dk | 70 500 500 | Side 4 af 5
+                                                  nettopower ApS
+                                         Ørestads Boulevard 67
+
+                                              2300 København S
+                                                      CVR: 34221162
+
+Information
+
+Følg og sammenlign dit forbrug og        Strømmen, der kommer ud af stik-
+dit abonnement ved at logge ind i        kontakten, er den samme, uanset
+vores selvbetjening.                     hvor du køber din strøm. Du kan
+                                         dog selv kompensere for dette på
+Log ind her                              baggrund af certi kater, så din
+                                         klima- og miljøpåvirkning er efter
+Det er altid muligt at skifte leveran-   dit ønske.
+dør eller produkt, så du er sikret
+den billigste løsning. Du kan tjekke     Som kunde hos nettopower kan du
+din elregning og sammenligne             vælge at købe strøm fra danske
+priser på nettopower.dk, eller nde       vindmøller. I 2023 købte vi 12% af
+information om leverandør- eller         vores forbrug fra vind.
+produktskift på Forsyningstilsynets
+sammenligningsportal (elpris.dk).        Se vores fulde eldeklaration
+
+Har du klaget til os og er du util-      Læs mere om, hvordan du kan opti-
+freds med vores behandling eller         mere dit energiforbrug på
+løsning, kan du klage til Anke-          sparenergi.dk, som drives af Energi-
+nævnet på energiområdet, Carl            styrelsen.
+Jacobsens Vej 35, 2500 Valby. T lf.: 41
+71 50 00, energianke.dk.                 Ligesom alle andre elselskaber op-
+                                         kræver nettopower ApS de lov-
+Læs dine rettigheder hos Energi-         pligtige tariffer, afgifter og gebyrer
+styrelsen                                på vegne af netselskaber og Energi-
+                                         net. Læs mere om de lovpligtige af-
+                                         gifter på Energinet.dk eller dit net-
+                                         selskabs hjemmeside.
+
+nettopower ApS | nettopower.dk | kundeservice@nettopower.dk | 70 500 500 | Side 5 af 5
+

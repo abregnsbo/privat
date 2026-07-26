@@ -1,0 +1,81 @@
+Axel Bregnsbo                                                                                           NettoPower ApS    31.05.2023
+Malmmosevej 87A                                                                                         Jenagade 22, 3.        998261
+2830 Virum                                                                                              2300 København S       152240
+                                                                                                        CVR: 34221162
+                                                                                                                            Maj 2023
+                                                                                                        Fakturadato
+                                                                                                        Fakturanummer
+                                                                                                        Kundenummer.
+                                                                                                        Periode
+
+Forbrugsoversigt aftagenr. 98002784898
+
+Registreret kunde:            Axel Bregnsbo
+Installationsadresse:         Malmmosevej 87A, 2830 Virum
+Forventet årsforbrug:         3.199 m³ (oplyst af dit lokale netselskab udfra sidste års forbrug)
+
+Aconto Gas-forbrug, profil-kunde
+
+Dato  Forbrugsperiode                                                                       Estimeret   Enhedspris                Beløb
+                                                                                               forbrug  inkl.moms          inkl.moms
+31.05.2023 01.05.2023 - 31.05.2023                                                              134 m³
+                  Gas variabel pris (Gas)                                                                  4,36 kr/m³         585,68 kr
+                                                                                     I alt      134 m³   4,36 kr/m³*         585,68 kr
+
+* Enhedspris eksl. faste omkostninger (4,36 kr/m³ inkl. faste omkostninger)                                                   Ændring
+Beregningerne er gennemført med flere decimaler end vist på fakturaen.                                                     inkl.moms
+                                                                                                                          -1.645,43 kr
+Korrektion af estimeret forbrug efter måleraflæsning
+                                                                                                                          -1.645,43 kr
+Dato  Forbrugsperiode                Estimeret    Aflæst                                    Ændring i   Enhedspris
+                                        forbrug  forbrug                                       forbrug  inkl.moms*
+
+10.05.2023 01.01.2023 -              1.776 m³    1.527 m³                                   -249 m³         6,50 kr/m³
+                  30.04.2023
+
+      Variabel pris
+
+                              I alt  1.776 m³    1.527 m³                                   -249 m³
+
+* Enhedspris eksl. faste omkostninger (ved korrektion ændres faste omkostninger ikke)
+Beregningerne er gennemført med flere decimaler end vist på fakturaen.
+
+Forbrugsoversigt aftagenr. 74113617656
+
+Registreret kunde:            Axel Bregnsbo
+Installationsadresse:         Malmmosevej 87A, 2830 Virum
+Forventet årsforbrug:         5.531 kWh (oplyst af dit lokale netselskab udfra sidste års forbrug)
+Webaccesskode:                2bri5qru
+
+El-forbrug, timeafregnet
+
+Dato  Forbrugsperiode                                                                       Forbrug      Enhedspris              Beløb
+                                                                                            442 kWh      inkl.moms        inkl.moms
+31.05.2023 01.05.2023 - 31.05.2023
+                  El variabel pris (El m/variabel pris)                                     442 kWh       0,75 kr/kWh       332,40 kr
+                  Transport tariff                                                                        0,53 kr/kWh       233,09 kr
+                  Transport fast
+                  El-afgift                                                                               0,01 kr/kWh         59,69 kr
+                                                                                     I alt              1,29 kr/kWh*            4,42 kr
+
+* Enhedspris eksl. faste omkostninger (1,42 kr/kWh inkl. faste omkostninger)                                                629,60 kr
+Beregningerne er gennemført med flere decimaler end vist på fakturaen.
+
+                       NettoPower ApS | https://www.nettopower.dk/mit-nettopower | kundeservice@nettopower.dk | Side 1 : 2
+Total for alle installationer                                          25%         1.215,28 kr
+Forbrug                                                      inkl. moms            -1.645,43 kr
+Korrektioner
+Moms                                                                                  -86,04 kr
+Total                                                                               -430,15 kr
+
+Mængder og priser er beregnet med flere decimaler end vist.
+
+                                                             Min NettoPower konto  15.759,61 kr
+                                                             Saldo pr. 30.04.2023   -1.215,28 kr
+                                                             Periodens forbrug       1.645,43 kr
+                                                             Korrektioner
+                                                                                   16.189,76 kr
+                                                             Saldo pr. 31.05.2023
+
+NettoPower ApS | https://www.nettopower.dk/mit-nettopower | kundeservice@nettopower.dk | Side 2 : 2
+

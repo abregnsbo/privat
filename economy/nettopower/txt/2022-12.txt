@@ -1,0 +1,65 @@
+                                                                                                        NettoPower ApS
+                                                                                                        Jenagade 22, 3.
+                                                                                                        2300 København S
+                                                                                                        CVR: 34221162
+
+Axel Bregnsbo                                                                                           Fakturadato              30.11.2022
+Malmmosevej 87A                                                                                         Fakturanummer                 813135
+2830 Virum                                                                                              Kundenummer.                  152240
+                                                                                                        Periode
+                                                                                                                          November 2022
+
+Forbrugsoversigt aftagenr. 74113617656
+
+Registreret kunde:        Axel Bregnsbo
+Installationsadresse:     Malmmosevej 87A, 2830 Virum
+Forventet årsforbrug:     5.199 kWh (oplyst af dit lokale netselskab udfra sidste års forbrug)
+Webaccesskode:            2bri5qru
+
+El-forbrug, timeafregnet
+
+Dato  Forbrugsperiode                                                                       Forbrug      Enhedspris              Beløb
+                                                                                            537 kWh      inkl.moms        inkl.moms
+30.11.2022 01.11.2022 - 30.11.2022
+                  El variabel pris (El m/variabel pris)                                     537 kWh       1,63 kr/kWh        877,87 kr
+                  Transport tariff                                                                        0,65 kr/kWh        349,25 kr
+                  Transport fast
+                  El-afgift                                                                               0,90 kr/kWh         28,75 kr
+                                                                                     I alt              3,19 kr/kWh*         485,47 kr
+                                                                                                                          1.741,34 kr
+* Enhedspris eksl. faste omkostninger (3,24 kr/kWh inkl. faste omkostninger)
+Beregningerne er gennemført med flere decimaler end vist på fakturaen.
+
+Forbrugsoversigt aftagenr. 98002784898
+
+Registreret kunde:        Axel Bregnsbo
+Installationsadresse:     Malmmosevej 87A, 2830 Virum
+Forventet årsforbrug:     3.579 m³ (oplyst af dit lokale netselskab udfra sidste års forbrug)
+
+Aconto Gas-forbrug, profil-kunde
+
+Dato  Forbrugsperiode                                                                       Estimeret   Enhedspris               Beløb
+                                                                                               forbrug   inkl.moms        inkl.moms
+30.11.2022 01.11.2022 - 30.11.2022                                                              241 m³
+                  Gas variabel pris (Gas)                                                                 11,62 kr/m³     2.804,41 kr
+                                                                                     I alt      241 m³  11,62 kr/m³*      2.804,41 kr
+
+* Enhedspris eksl. faste omkostninger (11,62 kr/m³ inkl. faste omkostninger)
+Beregningerne er gennemført med flere decimaler end vist på fakturaen.
+
+Total for alle installationer                                                                                     25%     4.545,75 kr
+Forbrug                                                                                                 inkl. moms          909,14 kr
+Moms
+Total                                                                                                                     4.545,75 kr
+
+Mængder og priser er beregnet med flere decimaler end vist.
+
+                                                                                            Min NettoPower konto          51.423,98 kr
+                                                                                            Saldo pr. 31.10.2022
+
+                       NettoPower ApS | https://www.nettopower.dk/mit-nettopower | kundeservice@nettopower.dk | Side 1 : 2
+Periodens forbrug      -4.545,75 kr
+Saldo pr. 30.11.2022  46.878,23 kr
+
+NettoPower ApS | https://www.nettopower.dk/mit-nettopower | kundeservice@nettopower.dk | Side 2 : 2
+
