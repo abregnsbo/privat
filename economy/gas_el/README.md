@@ -182,6 +182,37 @@ a ~75 % overestimate on every el aconto. Gas estimates are roughly correct.
 - Next quarterly aconto (~1 Sep 2026) would be another ~10,000 kr computed
   from the same inflated el estimate. No binding period on the contract.
 
+## Supplier switch to DCC Energi (planned, 2026-07)
+
+Candidate replacement supplier after the NettoPower reconstruction:
+**DCC Energi A/S** (dccenergi.dk) — owned 60 % by DCC plc (Dublin, FTSE 100)
+and 40 % by DLG; 250+ employees, runs all Shell stations in DK. Solid
+counterparty, unlike NettoPower.
+
+- **El**: spot + 7.5 øre/kWh markup, 25 kr/md subscription (intro: 6 months
+  free), green power +3.5 øre/kWh optional, no binding. Trustpilot 4.4.
+- **Gas**: variable, ~4 kr/m³ (Dec 2025 level), 0 kr/md subscription, some
+  products 6 months binding. Evida distribution remains separate.
+- **Billing**: monthly aconto with subsequent settlement — ~1 month float
+  (~1,500–2,500 kr) vs. NettoPower's quarterly ~10,000 kr.
+
+Signup details:
+
+| | Electricity | Gas |
+|---|---|---|
+| Målepunkts-ID (aftagenr.) | 571313174113617656 (74113617656) | 571515198002784898 (98002784898) |
+| Målernummer | 21265781 | 1103276 (Evida) |
+| Expected annual usage | **6,000 kWh** | **3,300 m³** |
+| | *(do NOT accept NettoPower's inflated 10,460 kWh estimate)* | |
+
+- Start date: **2026-09-01** (prepayment at NettoPower runs to 31 Aug; their
+  next ~10,000 kr aconto would hit ~1 Sep).
+- NettoPower notice: 15 workdays → cancel both agreements by ~2026-08-07
+  (kundenr. 152240 / ref. N9484384, kundeservice@nettopower.dk).
+- On switch: photo the gas meter reading; check Betalingsservice ~1 Sep and
+  reject any NettoPower collection; demand slutafregning (~5,500 kr expected
+  credit, see risk analysis above).
+
 ## Known gaps
 
 - **2023-07 … 2025-03** (21 months) and **2026-01**: invoice emails in this
