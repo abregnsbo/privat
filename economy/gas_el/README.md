@@ -17,28 +17,28 @@ NettoPower supplies both electricity and gas (switched from previous suppliers
 
 ## Usage table (measured, per consumption month)
 
-| Period | El kWh | El DKK | Gas m³ | Gas DKK |
-|---------|-------:|--------:|-------:|--------:|
-| 2022-11 | 537 | 1,741.34 | 241 | 2,804.41 |
-| 2022-12 | 661 | 2,617.25 | 363 | 5,131.21 |
-| 2023-01 | 629 | 1,434.60 | 492 | 3,874.73 |
-| 2023-02 | 469 | 1,150.23 | 492 | 7,396.11 |
-| 2023-03 | 520 | 1,120.07 | 499 | 2,814.51 |
-| 2023-04 | 450 |   704.46 | 292 | 1,578.95 |
-| 2023-05 | 442 |   629.60 | 134 |   585.68 |
-| 2023-06 | 416 |   708.45 |  66 |   295.91 |
-| *2023-07 … 2025-03* | *gap* | | *gap* | |
-| 2025-04 | 483 | 1,153.48 | 248 | 1,563.11 |
-| 2025-05 | 438 |   995.69 | 169 | 1,042.52 |
-| 2025-06 | 344 |   787.63 |  92 |   586.44 |
-| 2025-07 | 297 |   747.94 |  63 |   384.66 |
-| 2025-08 | 355 |   871.00 |  74 |   443.00 |
-| 2025-09 | 371 |   964.86 |  97 |   577.19 |
-| 2025-10 | 550 | 1,508.35 | 274 | 1,669.28 |
-| 2025-11 | 591 | 1,712.89 | 403 | 2,399.64 |
-| 2025-12 | 761 | 2,058.58 | 363 | 2,490.36 |
-| *2026-01* | *gap* | | *gap* | |
-| 2026-02 | 654 | 1,340.37 | 522 | 3,363.00 |
+| Period              | El kWh |   El DKK | Gas m³ |  Gas DKK |
+|---------------------|-------:|---------:|-------:|---------:|
+| 2022-11             |    537 | 1,741.34 |    241 | 2,804.41 |
+| 2022-12             |    661 | 2,617.25 |    363 | 5,131.21 |
+| 2023-01             |    629 | 1,434.60 |    492 | 3,874.73 |
+| 2023-02             |    469 | 1,150.23 |    492 | 7,396.11 |
+| 2023-03             |    520 | 1,120.07 |    499 | 2,814.51 |
+| 2023-04             |    450 |   704.46 |    292 | 1,578.95 |
+| 2023-05             |    442 |   629.60 |    134 |   585.68 |
+| 2023-06             |    416 |   708.45 |     66 |   295.91 |
+| *2023-07 … 2025-03* |  *gap* |          |  *gap* |          |
+| 2025-04             |    483 | 1,153.48 |    248 | 1,563.11 |
+| 2025-05             |    438 |   995.69 |    169 | 1,042.52 |
+| 2025-06             |    344 |   787.63 |     92 |   586.44 |
+| 2025-07             |    297 |   747.94 |     63 |   384.66 |
+| 2025-08             |    355 |   871.00 |     74 |   443.00 |
+| 2025-09             |    371 |   964.86 |     97 |   577.19 |
+| 2025-10             |    550 | 1,508.35 |    274 | 1,669.28 |
+| 2025-11             |    591 | 1,712.89 |    403 | 2,399.64 |
+| 2025-12             |    761 | 2,058.58 |    363 | 2,490.36 |
+| *2026-01*           |  *gap* |          |  *gap* |          |
+| 2026-02             |    654 | 1,340.37 |    522 | 3,363.00 |
 
 DKK amounts are incl. VAT. Gas amounts in 2023 and some 2025 months are aconto
 estimates with later quarterly corrections (see the "Korrektioner" section on
@@ -47,19 +47,19 @@ hourly metered (timeafregnet) and accurate.
 
 ### Partial-year sums (covered months only)
 
-| Year | Months | El kWh | El DKK | Gas m³ | Gas DKK |
-|------|--------|-------:|-------:|-------:|--------:|
-| 2022 | Nov–Dec | 1,198 |  4,358 |   604 |  7,936 |
-| 2023 | Jan–Jun | 2,926 |  5,747 | 1,975 | 16,546 |
-| 2025 | Apr–Dec | 4,190 | 10,800 | 1,783 | 11,156 |
-| 2026 | Feb     |   654 |  1,340 |   522 |  3,363 |
+| Year | Months  | El kWh | El DKK | Gas m³ | Gas DKK |
+|------|---------|-------:|-------:|-------:|--------:|
+| 2022 | Nov–Dec |  1,198 |  4,358 |    604 |   7,936 |
+| 2023 | Jan–Jun |  2,926 |  5,747 |  1,975 |  16,546 |
+| 2025 | Apr–Dec |  4,190 | 10,800 |  1,783 |  11,156 |
+| 2026 | Feb     |    654 |  1,340 |    522 |   3,363 |
 
 ## Aconto invoices 2026 (estimated, prepaid)
 
-| Invoice | Prepay period | Est. el kWh | El DKK | Est. gas m³ | Gas DKK | Total DKK |
-|---------|---------------|------------:|-------:|------------:|--------:|----------:|
-| F7797 (2026-03-27)  | 2026-03-24 – 2026-05-31 | 1,966.3 | 5,381.55 | 565.9 | 4,387.27 | 9,768.82 |
-| F57906 (2026-06-26) | 2026-06-01 – 2026-08-31 | 2,614.0 | 6,773.06 | 279.3 | 2,339.97 | 9,122.78 |
+| Invoice             | Prepay period           | Est. el kWh |   El DKK | Est. gas m³ |  Gas DKK | Total DKK |
+|---------------------|-------------------------|------------:|---------:|------------:|---------:|----------:|
+| F7797 (2026-03-27)  | 2026-03-24 – 2026-05-31 |     1,966.3 | 5,381.55 |       565.9 | 4,387.27 |  9,768.82 |
+| F57906 (2026-06-26) | 2026-06-01 – 2026-08-31 |     2,614.0 | 6,773.06 |       279.3 | 2,339.97 |  9,122.78 |
 
 The 2026 billing migration ended the monthly statement emails (last one
 2026-03-16 covering Feb 2026); billing is now quarterly aconto with later
@@ -71,15 +71,19 @@ Source: `eloverblik_el_monthly.csv`, exported from eloverblik.dk (metered
 values, målepunkt 571313174113617656). Fills the invoice gap completely.
 Matches the invoice kWh figures exactly where they overlap. kWh, rounded:
 
-| Year | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec | Total |
-|------|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|------:|
-| 2022 | 848 | 534 | 586 | 532 | 363 | 340 | 327 | 376 | 329 | 381 | 537 | 661 | 5,813 |
-| 2023 | 629 | 469 | 520 | 450 | 442 | 416 | 372 | 473 | 519 | 521 | 633 | 850 | 6,295 |
-| 2024 | 737 | 656 | 630 | 588 | 402 | 356 | 384 | 358 | 318 | 485 | 592 | 687 | 6,193 |
-| 2025 | 617 | 509 | 623 | 483 | 438 | 344 | 297 | 355 | 371 | 550 | 591 | 761 | 5,939 |
-| 2026 | 701 | 654 | 568 | 532 | 455 | 313 | 278*| | | | | | 3,500* |
+| Year |  Jan |  Feb |  Mar |  Apr |  May |  Jun |  Jul |  Aug |  Sep |  Oct |  Nov |  Dec |  Total | kr/kWh |
+|------|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-------:|-------:|
+| 2022 |  848 |  534 |  586 |  532 |  363 |  340 |  327 |  376 |  329 |  381 |  537 |  661 |  5,813 |  3.64ᵃ |
+| 2023 |  629 |  469 |  520 |  450 |  442 |  416 |  372 |  473 |  519 |  521 |  633 |  850 |  6,295 |  1.96ᵇ |
+| 2024 |  737 |  656 |  630 |  588 |  402 |  356 |  384 |  358 |  318 |  485 |  592 |  687 |  6,193 |      – |
+| 2025 |  617 |  509 |  623 |  483 |  438 |  344 |  297 |  355 |  371 |  550 |  591 |  761 |  5,939 |  2.58ᶜ |
+| 2026 |  701 |  654 |  568 |  532 |  455 |  313 | 278* |      |      |      |      |      | 3,500* |  2.05ᵈ |
 
 \* 2026 through 26 July (partial month).
+kr/kWh = average all-in electricity price (energy + transport + el-afgift,
+incl. moms) from the NettoPower invoices: billed el DKK ÷ kWh for the
+invoice-covered months only — ᵃ Nov–Dec 2022 (energy crisis), ᵇ Jan–Jun
+2023, ᶜ Apr–Dec 2025, ᵈ Feb 2026 only. 2024 has no invoice price data.
 
 ## Gas — quarterly meter readings (Mit Evida)
 
@@ -88,23 +92,39 @@ Source: `evida_gas_quarterly.csv`, from mit.evida.dk "Forbrugsudvikling"
 Evida's official consumption figure; note it runs ~7 % below the raw meter
 difference (temperature/pressure correction), so use Forbrug, not deltas.
 
-| Period | Forbrug m³ |
-|--------|-----------:|
-| 2022-05-01 – 2022-12-31 | 1,795 |
-| 2023 Jan–Apr | 1,527 |
-| 2023 May–Jun | 459 |
-| 2023 Q3 | 475 |
-| 2023 Q4 | 852 |
-| 2024 Q1 | 1,281 |
-| 2024 Q2 | 721 |
-| 2024 Q3 | 384 |
-| 2024 Q4 | 880 |
-| 2025 Q1 | 1,365 |
-| 2025 Q2 | 538 |
-| 2025 Q3 | 493 |
-| 2025 Q4 | 855 |
-| 2026 Q1 | 1,576 |
-| 2026 Q2 | 684 |
+| Period                  | Forbrug m³ | Gas price kr/m³ | Distrib. kr/m³ | Total kr/m³ |
+|-------------------------|-----------:|----------------:|---------------:|------------:|
+| 2022-05-01 – 2022-12-31 |      1,795 |           13.1¹ |            5.0 |        18.1 |
+| 2023 Jan–Apr            |      1,527 |             8.8 |            5.3 |        14.1 |
+| 2023 May–Jun            |        459 |             4.4 |            5.7 |        10.1 |
+| 2023 Q3                 |        475 |        4.5 est. |            5.6 |        10.1 |
+| 2023 Q4                 |        852 |        5.9 est. |            5.4 |        11.3 |
+| 2024 Q1                 |      1,281 |        4.5 est. |            6.6 |        11.1 |
+| 2024 Q2                 |        721 |        4.5 est. |            6.6 |        11.1 |
+| 2024 Q3                 |        384 |        5.7 est. |            6.5 |        12.2 |
+| 2024 Q4                 |        880 |        6.0 est. |            6.6 |        12.6 |
+| 2025 Q1                 |      1,365 |        6.4 est. |            5.7 |        12.1 |
+| 2025 Q2                 |        538 |             6.3 |            5.7 |        12.0 |
+| 2025 Q3                 |        493 |             6.0 |            5.7 |        11.7 |
+| 2025 Q4                 |        855 |             6.3 |            5.7 |        12.0 |
+| 2026 Q1                 |      1,576 |            6.4² |            5.7 |        12.2 |
+| 2026 Q2                 |        684 |            7.8³ |            5.7 |        13.5 |
+
+Gas price = NettoPower's billed gas cost ÷ billed m³ (incl. moms, from
+`consumption.csv`) — the **supply** price only.
+Distrib. = the Evida bill per m³: distribution (~1.2–1.8 kr) + state
+afgifter (~3.3 kr) + nødforsyningstarif, incl. moms — quarterly averages
+from Forsyningstilsynet's component statistics; cross-checked against
+actual Evida payments ÷ consumption (5.1–5.6 kr/m³ per year).
+Total = gas price + distrib. — the full cost per m³ delivered.
+¹ Nov–Dec 2022 invoices only (energy-crisis peak). ² Feb 2026 invoice
+only. ³ Aconto rate from invoice F7797, not settled actuals.
+"est." = invoice gap; estimated from Forsyningstilsynet's monthly
+naturgasprisstatistik ("Gaspris" component, quarterly average × 1.25 moms;
+Excel at forsyningstilsynet.dk → naturgasprisstatistik). Calibration: the
+FT average matches NettoPower's billed price in mid-2023 (4.35 vs 4.41)
+but NettoPower billed 20–35 % **above** the FT average through 2025, so
+the gap estimates are likely lower bounds for what NettoPower charged.
 
 Yearly: **2023: 3,313 m³ · 2024: 3,266 m³ · 2025: 3,251 m³** · 2026 H1: 2,260 m³
 (2022 from May: 1,795 m³; meter at supplier switch 2022-04-19: 26,174).
@@ -116,32 +136,32 @@ Actual bank payments, from `../Budgetkonto_2023-03-17-2026-05-17.csv`.
 `BS EVIDA SERVICE (NORD) A/S` is the separate gas distribution/transport bill,
 which comes on top of NettoPower's gas price.
 
-| Date | NettoPower DKK | | Date | Evida DKK |
-|------------|----------:|-|------------|---------:|
-| 2023-09-01 | 12,203.82 | | 2023-04-11 | 6,215.50 |
-| 2023-12-01 | 27,988.38 | | 2023-07-06 | 1,140.55 |
-| 2024-09-02 | 19,013.78 | | 2023-08-07 | 3,975.75 |
-| 2024-12-02 | 20,179.26 | | 2023-11-06 | 7,150.10 |
-| 2025-01-02 | 21,452.03 | | 2024-02-06 | 6,233.61 |
-| 2025-04-01 | 14,205.35 | | 2024-05-06 | 2,235.85 |
-| 2025-07-01 | 10,445.36 | | 2024-08-06 | 2,196.36 |
-| 2025-10-01 | 13,693.00 | | 2024-11-06 | 6,121.42 |
-| 2026-01-02 | 13,566.51 | | 2025-02-06 | 6,023.73 |
-| 2026-04-01 |  9,768.82 | | 2025-05-06 | 2,385.43 |
-|            |           | | 2025-08-06 | 1,626.61 |
-|            |           | | 2025-11-06 | 6,563.08 |
-|            |           | | 2026-02-06 | 5,860.64 |
-|            |           | | 2026-05-06 | 3,604.49 |
+| Date       | NettoPower DKK |   | Date       | Evida DKK |
+|------------|---------------:|---|------------|----------:|
+| 2023-09-01 |      12,203.82 |   | 2023-04-11 |  6,215.50 |
+| 2023-12-01 |      27,988.38 |   | 2023-07-06 |  1,140.55 |
+| 2024-09-02 |      19,013.78 |   | 2023-08-07 |  3,975.75 |
+| 2024-12-02 |      20,179.26 |   | 2023-11-06 |  7,150.10 |
+| 2025-01-02 |      21,452.03 |   | 2024-02-06 |  6,233.61 |
+| 2025-04-01 |      14,205.35 |   | 2024-05-06 |  2,235.85 |
+| 2025-07-01 |      10,445.36 |   | 2024-08-06 |  2,196.36 |
+| 2025-10-01 |      13,693.00 |   | 2024-11-06 |  6,121.42 |
+| 2026-01-02 |      13,566.51 |   | 2025-02-06 |  6,023.73 |
+| 2026-04-01 |       9,768.82 |   | 2025-05-06 |  2,385.43 |
+|            |                |   | 2025-08-06 |  1,626.61 |
+|            |                |   | 2025-11-06 |  6,563.08 |
+|            |                |   | 2026-02-06 |  5,860.64 |
+|            |                |   | 2026-05-06 |  3,604.49 |
 
 Per year (payment date, not consumption period):
 
-| Year | NettoPower DKK | Evida DKK | Sum |
-|------|---------------:|----------:|--------:|
-| 2023 (from 17/3) | 40,192.20 | 18,481.90 | 58,674.10 |
-| 2024 | 39,193.04 | 16,787.24 | 55,980.28 |
-| 2025 | 59,795.74 | 16,598.85 | 76,394.59 |
-| 2026 (to 17/5) | 23,335.33 |  9,465.13 | 32,800.46 |
-| **Total** | **162,516.31** | **61,333.12** | **223,849.43** |
+| Year             | NettoPower DKK |     Evida DKK |            Sum |
+|------------------|---------------:|--------------:|---------------:|
+| 2023 (from 17/3) |      40,192.20 |     18,481.90 |      58,674.10 |
+| 2024             |      39,193.04 |     16,787.24 |      55,980.28 |
+| 2025             |      59,795.74 |     16,598.85 |      76,394.59 |
+| 2026 (to 17/5)   |      23,335.33 |      9,465.13 |      32,800.46 |
+| **Total**        | **162,516.31** | **61,333.12** | **223,849.43** |
 
 Caveats when comparing with the usage table:
 
@@ -162,13 +182,13 @@ The 2026 aconto invoices assume **10,460 kWh/year** electricity
 ("Estimeret årsforbrug"), but metered history shows **~6,000 kWh/year** —
 a ~75 % overestimate on every el aconto. Gas estimates are roughly correct.
 
-| | Billed (est.) | Expected actual | Over/(under)paid |
-|---|---|---|---|
-| F7797 (24/3–31/5) el | 1,966 kWh / 5,381.55 kr | ~1,133 kWh (metered) | +2,280 kr |
-| F7797 gas | 566 m³ / 4,387.27 kr | ~641 m³ | −580 kr |
-| F57906 (1/6–31/8) el | 2,614 kWh / 6,773.06 kr | ~1,005 kWh (proj.) | +4,170 kr |
-| F57906 gas | 279 m³ / 2,339.97 kr | ~324 m³ (proj.) | −370 kr |
-| **Net credit by 31 Aug 2026** | | | **≈ +5,500 kr** |
+| Invoice / fuel               | Billed (est.)            | Expected actual      | Over/(under)paid |
+|------------------------------|--------------------------|----------------------|-----------------:|
+| F7797 (24/3–31/5) el         | 1,966 kWh / 5,381.55 kr  | ~1,133 kWh (metered) |        +2,280 kr |
+| F7797 gas                    |   566 m³  / 4,387.27 kr  |   ~641 m³            |          −580 kr |
+| F57906 (1/6–31/8) el         | 2,614 kWh / 6,773.06 kr  | ~1,005 kWh (proj.)   |        +4,170 kr |
+| F57906 gas                   |   279 m³  / 2,339.97 kr  |   ~324 m³  (proj.)   |          −370 kr |
+| **Net credit by 31 Aug 2026**|                          |                      | **≈ +5,500 kr**  |
 
 - The Mar–May period is fully consumed but was **not settled** on the June
   invoice — that ~1,700 kr net credit sits unsettled at NettoPower.
@@ -198,12 +218,13 @@ counterparty, unlike NettoPower.
 
 Signup details:
 
-| | Electricity | Gas |
-|---|---|---|
+|                           | Electricity                      | Gas                              |
+|---------------------------|----------------------------------|----------------------------------|
 | Målepunkts-ID (aftagenr.) | 571313174113617656 (74113617656) | 571515198002784898 (98002784898) |
-| Målernummer | 21265781 | 1103276 (Evida) |
-| Expected annual usage | **6,000 kWh** | **3,300 m³** |
-| | *(do NOT accept NettoPower's inflated 10,460 kWh estimate)* | |
+| Målernummer               | 21265781                         | 1103276 (Evida)                  |
+| Expected annual usage     | **6,000 kWh**                    | **3,300 m³**                     |
+
+Do NOT accept NettoPower's inflated 10,460 kWh el estimate at signup.
 
 - Start date: **2026-09-01** (prepayment at NettoPower runs to 31 Aug; their
   next ~10,000 kr aconto would hit ~1 Sep).
