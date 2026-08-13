@@ -129,6 +129,49 @@ the gap estimates are likely lower bounds for what NettoPower charged.
 Yearly: **2023: 3,313 m³ · 2024: 3,266 m³ · 2025: 3,251 m³** · 2026 H1: 2,260 m³
 (2022 from May: 1,795 m³; meter at supplier switch 2022-04-19: 26,174).
 
+## Gas consumption analysis: hot water is the anomaly (2026-07)
+
+Context: family of 4, 170 m² house from 1972, roof insulated, modern thermo
+windows, gas boiler + hot water tank 20+ years old (tank insulation OK),
+water softener installed (serviced 2023-06). Two adult sons shower a lot.
+
+**3,300 m³/year is roughly double the norm** (family of 4 in 150 m² from
+2002: ~1,700 m³; couple in 100 m² from 1970: ~1,350 m³ — DGC/OK figures).
+But the split matters:
+
+- **Summer quarters (Jul–Sep, zero heating) run 384–493 m³ ≈ 4–5 m³/day**,
+  vs. ~1 m³/day typical DHW for 4 people. Non-heating baseline extrapolates
+  to **~1,400–1,600 m³/year vs. a ~350–400 m³ norm** — the excess is hot
+  water / standing losses, worth ~15,000 kr/year at ~12.5 kr/m³ all-in.
+- Space heating = rest ≈ 1,700–1,800 m³ ≈ ~115 kWh/m²/year — **normal** for
+  a roof-insulated 1972 house. The building shell is not the problem.
+
+Energy per event (gas incl. boiler losses): 10-min shower ≈ 0.4 m³ (~5 kr),
+20-min shower ≈ 0.8 m³ (~10 kr), bathtub ≈ 0.65 m³ (~8 kr). Two daily
+long showers ≈ 550–650 m³/year — a large share, likely not all of it.
+
+Suspects for the remaining baseline: hot-water circulation loop running
+24/7 (up to 300–800 m³/yr), old boiler short-cycling on summer DHW load
+(seasonal efficiency can drop to 50–60 %), limescale on the heat-exchanger
+coil (typ. 5–15 % penalty; hard-water area, but softener limits new
+build-up; pre-softener scale remains until descaled). Tank standing losses
+ruled less likely (insulation OK).
+
+Diagnostic meter tests (meter 1103276 reads to the litre):
+
+1. Overnight 23:00–07:00, no draws, heating off → standing + circulation
+   loss. > ~0.3 m³/night is a problem.
+2. Reheat after a big draw-down: ~160 L × 45 K ≈ 0.75 m³ at 100 % boiler
+   efficiency; 1.2–1.4 m³ ⇒ ~55–60 % → descale or replace. Kettling
+   (rumbling at reheat) = audible scale symptom.
+3. Meter before/after one of the boys' showers → kr per shower.
+4. Compare a week with the boys home vs. away → their share vs. system's.
+
+Strategy: before investing in the gas installation, consider a heat-pump
+water heater (~12–15,000 kr): heat via gas costs ~1.3–1.5 kr/kWh real,
+via DHW heat pump ~0.75 kr/kWh — kills most of the summer baseline,
+payback < 2 years, and decouples DHW from the ageing boiler.
+
 ## Payments (from Budgetkonto CSV, 2023-03-17 – 2026-05-17)
 
 Actual bank payments, from `../Budgetkonto_2023-03-17-2026-05-17.csv`.
