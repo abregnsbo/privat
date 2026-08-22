@@ -16,6 +16,14 @@ NettoPower supplies both electricity and gas (switched from previous suppliers
   invoices F19294 / F23659 (see "Energy Nordic interlude" below).
 - `bilag_maaledata_nettopower.pdf` (+ `.html` source) — meter-data
   documentation attached to the konkursbo claim (see below).
+- `Gmail - Opsigelse af el- og gasaftale ….pdf` — the 26-07-2026
+  termination email to NettoPower (15 workdays notice, effective 31-08);
+  `Gmail - [Henvendelse modtaget] ID_ 1812333 ….pdf` — NettoPower's
+  auto-reply receipt. Key evidence for both the konkursbo claim and the
+  Energy Nordic notice-period defense.
+- `netto_power_betalinger.pdf` — netbank overview of all BS NETTOPOWER
+  payments from Budgetkonto, incl. F7797 (9,768.82, 01-04-2026) and
+  F57906 (9,122.78, 01-07-2026).
 - `parse_invoices.py` — parses `txt/*.txt` into `consumption.csv` and prints
   the table below. Run: `py parse_invoices.py`.
 
