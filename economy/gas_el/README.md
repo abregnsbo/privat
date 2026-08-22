@@ -252,7 +252,9 @@ a ~75 % overestimate on every el aconto. Gas estimates are roughly correct.
 ## Supplier switch to DCC Energi (signed, start 2026-09-01)
 
 *Status 2026-08-22: agreement with DCC Energi in place, switch registered in
-DataHub with start 01-09-2026. NettoPower agreements terminated by email
+DataHub with start 01-09-2026 — verified on eloverblik's "Leverandøroversigt",
+which lists DCC Energi "Fra 31. aug. 2026" (the 31/8 date is DataHub's UTC
+rendering of 01-09 00:00 local). NettoPower agreements terminated by email
 2026-07-26.*
 
 Candidate replacement supplier after the NettoPower reconstruction:
