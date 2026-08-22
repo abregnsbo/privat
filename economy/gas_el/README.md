@@ -12,6 +12,10 @@ NettoPower supplies both electricity and gas (switched from previous suppliers
   billing system (2026 migration, "MigreretFraFBS"). Estimated forward
   consumption, not measured usage.
 - `txt/` — text extracted with `pdftotext -layout` (Latin-1 encoded).
+- `energy_nordic_juni_aug.pdf` / `energy_nordic_faktura.pdf` — Energy Nordic
+  invoices F19294 / F23659 (see "Energy Nordic interlude" below).
+- `bilag_maaledata_nettopower.pdf` (+ `.html` source) — meter-data
+  documentation attached to the konkursbo claim (see below).
 - `parse_invoices.py` — parses `txt/*.txt` into `consumption.csv` and prints
   the table below. Run: `py parse_invoices.py`.
 
@@ -343,11 +347,45 @@ over the NettoPower contract, the 26-07 termination satisfies even a
 "current month + 1 month" notice by 31-08. Both branches end the agreement
 31-08-2026. Do NOT enroll in Betalingsservice with Energy Nordic.
 
-Consequence for the NettoPower claim: F57906's el prepayment (6,773.06 kr
-for Jun–Aug) now covers only June ~303 kWh (~700 kr), so the claim grows
-from ~5,500 to **~7,300–7,500 kr** — now an unsecured claim against the
-**konkursbo** (file it with the kurator; demand slutafregning per
-2026-06-29 for el and 2026-08-31 for gas).
+## NettoPower konkursbo — claim filed (2026-08-22)
+
+NettoPower ApS (CVR 34221162) went konkurs 28-07-2026 at Sø- og
+Handelsretten (part of the Velkommen/B.energy/Vedvarende group collapse).
+Kuratorer: Teis Gullitz-Wormslev (Kromann Reumert), Preben Jakobsen
+(Gorrissen Federspiel), Cathrine Wollenberg Zittan (Poul Schmith).
+Contact: **nettopower@poulschmith.dk**, tel. 53 62 65 36 / 31 77 97 06
+(hverdage 10–14); claims can also be registered on konkursportalen.dk.
+Kurator promised all creditors further information by 28-08-2026.
+
+**Fordringsanmeldelse emailed 2026-08-22** (deadline was 25-08) as
+almindeligt krav (konkurslovens § 97) på **ca. 7.400 kr**:
+
+| Post | Beløb |
+|------|------:|
+| Aconto F7797 (betalt 01-04-2026) | 9.768,82 |
+| Aconto F57906 (betalt 01-07-2026) | 9.122,78 |
+| ÷ leveret el 24/3–31/5 (1.133 kWh målt) | ca. −3.100 |
+| ÷ leveret el 1/6–29/6 (302 kWh målt) | ca. −700 |
+| ÷ leveret gas 24/3–31/5 (ca. 641 m³) | ca. −4.970 |
+| ÷ leveret gas 1/6–31/8 (ca. 324 m³) | ca. −2.710 |
+| **Krav (estimat)** | **ca. 7.400** |
+
+Documentation: `bilag_maaledata_nettopower.pdf` (meter-data bilag built
+from the eloverblik/Evida exports), the two aconto invoices, bank payment
+records, and the 26-07 termination email. Claim to be updated when the
+Q3 gas reading (30-09) or boets slutopgørelse arrives.
+
+Per the kurator/community guidance, § 97 dividends will likely be zero or
+small — filed anyway to preserve the claim. The community guide (Google
+Doc "Vejledning", updated 09-08-2026, shared by other affected customers)
+also has templates for police report (straffelovens § 298,
+forudbetalingsbedrageri → NSK@politi.dk) and Ankenævn complaints.
+
+**Legal caveat** (Forbrugerombudsmanden, 20-05-2026): supplier transfers
+of customers require consent — *except during rekonstruktion*. The
+transfer to Energy Nordic (30-06) happened during NettoPower's
+rekonstruktion, so against Energy Nordic the strong argument is the
+**26-07 termination** (notice satisfied by 31-08), not lack of consent.
 
 ## Known gaps
 
