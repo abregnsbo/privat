@@ -218,6 +218,10 @@ Caveats when comparing with the usage table:
 
 ## Reconstruction risk analysis (2026-07-26)
 
+*Outcome: NettoPower went konkurs 2026-07-28, and el had already been
+transferred to Energy Nordic 2026-06-30 — see the "Energy Nordic interlude"
+section below for the updated claim (~7,300–7,500 kr against the konkursbo).*
+
 NettoPower is under reconstruction (rekonstruktion); prepayments cover
 through 2026-08-31. Analysis of aconto billed vs. expected actual usage:
 
@@ -245,7 +249,11 @@ a ~75 % overestimate on every el aconto. Gas estimates are roughly correct.
 - Next quarterly aconto (~1 Sep 2026) would be another ~10,000 kr computed
   from the same inflated el estimate. No binding period on the contract.
 
-## Supplier switch to DCC Energi (planned, 2026-07)
+## Supplier switch to DCC Energi (signed, start 2026-09-01)
+
+*Status 2026-08-22: agreement with DCC Energi in place, switch registered in
+DataHub with start 01-09-2026. NettoPower agreements terminated by email
+2026-07-26.*
 
 Candidate replacement supplier after the NettoPower reconstruction:
 **DCC Energi A/S** (dccenergi.dk) — owned 60 % by DCC plc (Dublin, FTSE 100)
@@ -276,6 +284,68 @@ Do NOT accept NettoPower's inflated 10,460 kWh el estimate at signup.
 - On switch: photo the gas meter reading; check Betalingsservice ~1 Sep and
   reject any NettoPower collection; demand slutafregning (~5,500 kr expected
   credit, see risk analysis above).
+
+## Energy Nordic interlude (el only, 2026-06-30 – 2026-08-31)
+
+The el supply was transferred **without consent** from NettoPower to Energy
+Nordic (energynordic.dk, kundenr. K7232665, aftalenr. A4952) effective
+**2026-06-30** — so NettoPower delivered el only through 29 June of the
+prepaid Jun–Aug quarter (F57906). Gas was not transferred. DCC Energi takes
+over from 2026-09-01 as planned.
+
+Invoices received (both unpaid as of 2026-08-22; manual payment code, not BS):
+
+| Invoice | Date / due | Content | Amount |
+|---------|------------|---------|-------:|
+| F19294 (`energy_nordic_juni_aug.pdf`) | 08-07 / 16-07 | 30 Jun actual 10 kWh (27.33) + Jul–Aug aconto 1,112 kWh (1,759.29) | 1,786.62 |
+| F23659 (`energy_nordic_faktura.pdf`) | 19-08 / 01-09 | Jul actual 345 kWh (607.89) − Jul-share of aconto (750.28) + Sep aconto 552 kWh (969.42) | 827.03 |
+| **Total invoiced** | | | **2,613.65** |
+
+Actually owed = measured consumption only (avg ~1.76–1.80 kr/kWh all-in):
+
+| Period | kWh | DKK |
+|--------|----:|----:|
+| 30 Jun (actual, Radius) | 10 | 27.33 |
+| Jul (actual, Radius) | 345 | 607.89 |
+| Aug (171.06 kWh metered through 20/8 + ~13.5 kWh/day × 11 days) | ~320 | ~580 |
+| **Fair total** | ~675 | **~1,215** |
+
+August detail (eloverblik, 2026-08-22): 1–10 Aug ≈ 3.7 kWh/day (house
+empty), 11–20 Aug ≈ 13.5 kWh/day — projection uses the latter.
+
+Overcharge in the invoices ≈ 1,400 kr: Sep aconto 969.42 (supply ends 31/8,
+DCC from 1/9) + Aug aconto overshoot (~1,009 billed vs ~580 expected).
+
+Timeline:
+
+- **2026-06-30**: el supply transferred to Energy Nordic without consent.
+- **2026-07-26**: written termination of the NettoPower agreement emailed to
+  NettoPower (receipt confirmed by auto-reply, "handled in 3–5 workdays";
+  never answered). Copy kept — key evidence.
+- **2026-07-28**: NettoPower declared **konkurs** (bankrupt).
+- **2026-08-22**: demand email sent to kundeservice@energynordic.dk:
+  1. confirm in writing that supply ends 31-08-2026 and that the DataHub
+     switch to DCC Energi (start 01-09) is not opposed;
+  2. credit the Sep aconto (969.42 kr) on F23659;
+  3. issue a slutafregning per 31-08 on Radius-metered data instead of the
+     F19294 Aug aconto;
+  4. the actual consumption (~1,215 kr) will be paid **as soon as points 1–3
+     are confirmed in writing** — both invoices on hold until then, no
+     dunning fees accepted while pending. Any credit to be paid out, not
+     offset. Response deadline 31-08-2026, otherwise Ankenævnet på
+     Energiområdet.
+
+Notice-period defense (the fork): either the transfer without consent means
+no contract terms/notice apply — or, if Energy Nordic claims to have taken
+over the NettoPower contract, the 26-07 termination satisfies even a
+"current month + 1 month" notice by 31-08. Both branches end the agreement
+31-08-2026. Do NOT enroll in Betalingsservice with Energy Nordic.
+
+Consequence for the NettoPower claim: F57906's el prepayment (6,773.06 kr
+for Jun–Aug) now covers only June ~303 kWh (~700 kr), so the claim grows
+from ~5,500 to **~7,300–7,500 kr** — now an unsecured claim against the
+**konkursbo** (file it with the kurator; demand slutafregning per
+2026-06-29 for el and 2026-08-31 for gas).
 
 ## Known gaps
 
