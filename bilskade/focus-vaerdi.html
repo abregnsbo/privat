@@ -1,0 +1,348 @@
+<meta charset="utf-8">
+<title>Ford Focus genanskaffelsespris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+:root{
+  --ground:#F7F6F2; --surface:#FFFFFF; --panel:#EAEFF6;
+  --ink:#23282E; --ink2:#5C6570; --ink3:#8A929C;
+  --hair:#DDDAD2; --hair2:#E8E5DE;
+  --blue:#2E64A8; --blue-soft:#B9CCE4; --orange:#C4622D;
+  --grid:#E3E0D8; --muted-pt:#9BA3AC;
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#15181C; --surface:#1D2126; --panel:#232B36;
+    --ink:#E4E7EB; --ink2:#9AA3AD; --ink3:#6F7883;
+    --hair:#333A42; --hair2:#2A3037;
+    --blue:#5B96DD; --blue-soft:#3A5578; --orange:#D97128;
+    --grid:#2B323A; --muted-pt:#5D666F;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#15181C; --surface:#1D2126; --panel:#232B36;
+  --ink:#E4E7EB; --ink2:#9AA3AD; --ink3:#6F7883;
+  --hair:#333A42; --hair2:#2A3037;
+  --blue:#5B96DD; --blue-soft:#3A5578; --orange:#D97128;
+  --grid:#2B323A; --muted-pt:#5D666F;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:400 16px/1.6 "Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+.page{max-width:880px; margin:0 auto; padding:48px 24px 72px}
+h1,h2{font-family:"Source Serif 4", Georgia, serif; font-weight:600; text-wrap:balance; margin:0}
+h1{font-size:2.1rem; line-height:1.2}
+h2{font-size:1.35rem; margin:0 0 14px}
+.eyebrow{
+  font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink2); margin-bottom:10px;
+}
+header{border-bottom:2px solid var(--ink); padding-bottom:22px}
+.specs{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+.chip{
+  border:1px solid var(--hair); background:var(--surface); border-radius:3px;
+  padding:3px 10px; font-size:.85rem; color:var(--ink2);
+  font-variant-numeric:tabular-nums;
+}
+.chip b{color:var(--ink); font-weight:600}
+.meta{margin-top:12px; font-size:.85rem; color:var(--ink3)}
+section{margin-top:44px}
+.hero{
+  background:var(--panel); border:1px solid var(--hair); border-radius:6px;
+  padding:26px 28px; display:flex; flex-wrap:wrap; gap:28px 48px; align-items:flex-end;
+}
+.hero .big{font-family:"Source Serif 4", Georgia, serif; font-size:3rem; font-weight:600; line-height:1; color:var(--blue); font-variant-numeric:tabular-nums}
+.hero .lbl{font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); margin-bottom:8px}
+.hero .band{font-size:.95rem; color:var(--ink2); margin-top:8px; font-variant-numeric:tabular-nums}
+.hero .alt .big{font-size:1.7rem; color:var(--ink)}
+p{max-width:66ch}
+.note{font-size:.9rem; color:var(--ink2)}
+.charts{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:8px}
+@media (max-width:760px){.charts{grid-template-columns:1fr}}
+.chartbox{background:var(--surface); border:1px solid var(--hair); border-radius:6px; padding:16px 14px 8px}
+.chartbox h3{margin:0 0 4px; font-size:.95rem; font-weight:600}
+.legend{display:flex; flex-wrap:wrap; gap:14px; font-size:.8rem; color:var(--ink2); margin:14px 2px 4px}
+.legend span{display:inline-flex; align-items:center; gap:6px}
+.sw{width:10px; height:10px; border-radius:50%; display:inline-block}
+.sw.dia{width:11px; height:11px; border-radius:2px; transform:rotate(45deg) scale(.82)}
+svg text{font:400 11px "Public Sans", system-ui, sans-serif; fill:var(--ink2)}
+svg .axis{stroke:var(--hair); stroke-width:1}
+svg .grid{stroke:var(--grid); stroke-width:1}
+svg .fitline{stroke:var(--orange); stroke-width:2; fill:none; stroke-dasharray:6 4; opacity:.85}
+svg .ptlabel{fill:var(--orange); font-weight:600}
+circle.pt{cursor:pointer}
+table{
+  border-collapse:collapse; width:100%; font-size:.88rem;
+  font-variant-numeric:tabular-nums;
+}
+.tablewrap{overflow-x:auto; background:var(--surface); border:1px solid var(--hair); border-radius:6px}
+th,td{padding:8px 14px; text-align:left; white-space:nowrap}
+th{
+  font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink2);
+  border-bottom:1px solid var(--hair);
+}
+td{border-bottom:1px solid var(--hair2)}
+tr:last-child td{border-bottom:none}
+td.r,th.r{text-align:right}
+.hl td{background:var(--panel); font-weight:600}
+details{margin-top:14px}
+summary{cursor:pointer; font-size:.9rem; color:var(--blue); font-weight:600}
+summary:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+.factors{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
+.factor{
+  background:var(--surface); border:1px solid var(--hair); border-radius:6px;
+  padding:12px 18px; flex:1 1 180px;
+}
+.factor .n{font-family:"Source Serif 4", Georgia, serif; font-size:1.4rem; font-weight:600; font-variant-numeric:tabular-nums}
+.factor .d{font-size:.8rem; color:var(--ink2)}
+ul{padding-left:1.2em; max-width:70ch}
+li{margin-bottom:8px}
+li::marker{color:var(--ink3)}
+#tip{
+  position:fixed; pointer-events:none; display:none; z-index:10;
+  background:var(--ink); color:var(--ground); font-size:.78rem; line-height:1.45;
+  padding:6px 10px; border-radius:4px; max-width:240px; white-space:nowrap;
+}
+footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--hair); font-size:.8rem; color:var(--ink3)}
+@media (prefers-reduced-motion: no-preference){
+  .hero{animation:fade .5s ease-out}
+  @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+}
+@media print{
+  .hero{animation:none}
+  .chartbox,.hero,.factor,.tablewrap,li{break-inside:avoid}
+  h2{break-after:avoid}
+  details{display:block} details>*{display:block} summary{display:none}
+  .page{padding:0 8px}
+}
+</style>
+
+<div class="page">
+<header>
+  <div class="eyebrow">Værdiansættelse · totalskade</div>
+  <h1>Ford Focus III 1,0 EcoBoost stationcar</h1>
+  <div class="specs">
+    <span class="chip">1. registrering <b>juni 2012</b></span>
+    <span class="chip">km-stand <b>141.000 km</b></span>
+    <span class="chip"><b>125 hk · Titanium</b></span>
+    <span class="chip"><b>Benzin</b></span>
+    <span class="chip"><b>Anhængertræk</b></span>
+    <span class="chip">Model 2011–2017</span>
+  </div>
+  <div class="meta">Datagrundlag: bilbasen.dk, udtrukket 26. august 2026 — Ford Focus stationcar, modelår 2010–2016, med anhængertræk. 40 annoncer i alt; brugt er de 26 benzinbiler med almindelig detailpris (diesel og engros/CVR-annoncer frasorteret).</div>
+</header>
+
+<section>
+  <div class="hero">
+    <div>
+      <div class="lbl">Estimeret genanskaffelsespris</div>
+      <div class="big">ca. 52.000 kr</div>
+      <div class="band">Usikkerhedsbånd ± 5.000 kr → <b>47.000–57.000 kr</b></div>
+    </div>
+    <div class="alt">
+      <div class="lbl">Faktisk udbudte 125 hk Titanium</div>
+      <div class="big">54.900–71.900 kr</div>
+      <div class="band">eneste bil med lavere km-tal: 71.900 kr</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:14px">Hovedestimatet gælder bilens præcise variant: <b>1,0 EcoBoost 125 hk Titanium</b> (6-trins gearkasse; 100 hk-varianten har 5 trin). Det bygger på de 21 annoncer, der matcher bilen tættest — 1,0 EcoBoost benzin-stationcars med anhængertræk — med korrektion for motorvariant (125 hk: +9.100 kr) og udstyrsniveau (Titanium: +3.200 kr). En bred model på alle 26 benzinbiler giver ca. 55.000 kr. Alle priser er forhandleres udbudspriser til detail — dvs. hvad det faktisk koster at anskaffe en tilsvarende bil. Se afsnittet <i>Hvad koster en faktisk tilgængelig tilsvarende bil?</i> for de konkret udbudte biler.</p>
+</section>
+
+<section>
+  <h2>Pris mod kilometerstand og årgang</h2>
+  <div class="charts">
+    <div class="chartbox">
+      <h3>Pris mod km-stand</h3>
+      <svg id="c1" viewBox="0 0 430 310" role="img" aria-label="Punktdiagram: pris mod kilometerstand"></svg>
+    </div>
+    <div class="chartbox">
+      <h3>Pris mod 1. registrering</h3>
+      <svg id="c2" viewBox="0 0 430 310" role="img" aria-label="Punktdiagram: pris mod første registreringsår"></svg>
+    </div>
+  </div>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--blue)"></span>1,0 EcoBoost, detailpris (21)</span>
+    <span><span class="sw" style="background:var(--muted-pt)"></span>Øvrig benzin, 1,5/1,6 (5)</span>
+    <span><span class="sw dia" style="background:var(--orange)"></span>Min bil — modelestimat</span>
+    <span>--- modelkurve ved bilens alder hhv. km-stand</span>
+  </div>
+</section>
+
+<section>
+  <h2>Prismodellen</h2>
+  <p>Lineær regression på de 21 tætteste annoncer: <em>pris = grundpris − alder × aldersfald − km × km-fald + motortillæg + udstyrstillæg</em>. Modellen forklarer 88 % af prisvariationen (R² = 0,88).</p>
+  <div class="factors">
+    <div class="factor"><div class="n">−4.600 kr</div><div class="d">pr. år bilen ældes</div></div>
+    <div class="factor"><div class="n">−2.100 kr</div><div class="d">pr. 10.000 km kørt</div></div>
+    <div class="factor"><div class="n">+9.100 kr</div><div class="d">125 hk frem for 100 hk</div></div>
+    <div class="factor"><div class="n">+3.200 kr</div><div class="d">Titanium-udstyrsniveau</div></div>
+    <div class="factor"><div class="n">± 5.000 kr</div><div class="d">typisk restspredning (stand)</div></div>
+  </div>
+  <p class="note" style="margin-top:14px">Indsat bilens tal — 125 hk Titanium, alder 14,2 år (1. reg. juni 2012) og 141.000 km — giver modellen <b>52.300 kr</b>. Bilens km-tal er lavere end alle på nær én af de sammenlignelige Titanium-annoncer (der ligger på 172.000–252.000 km).</p>
+</section>
+
+<section>
+  <h2>Hvad koster en faktisk tilgængelig tilsvarende bil?</h2>
+  <p>Den statistiske model interpolerer mellem annoncerne — men man kan ikke købe et gennemsnit, kun de biler, der faktisk er til salg. Samtlige udbudte <b>1,0 EcoBoost 125 hk Titanium stationcars</b> i datagrundlaget, sorteret efter km-stand:</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Variant</th><th class="r">1. reg.</th><th class="r">Km</th><th class="r">Pris</th></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc.</td><td class="r">9/2015</td><td class="r">109.000</td><td class="r">71.900 kr</td></tr>
+    <tr class="hl"><td>Min bil</td><td class="r">6/2012</td><td class="r">141.000</td><td class="r">—</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc. ECO</td><td class="r">9/2014</td><td class="r">172.000</td><td class="r">54.900 kr</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc. ECO</td><td class="r">7/2013</td><td class="r">179.000</td><td class="r">44.700 kr</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc.</td><td class="r">4/2015</td><td class="r">188.000</td><td class="r">54.990 kr</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc.</td><td class="r">12/2014</td><td class="r">225.799</td><td class="r">49.900 kr</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc. ECO</td><td class="r">11/2013</td><td class="r">242.000</td><td class="r">39.900 kr</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc. ECO</td><td class="r">2/2013</td><td class="r">252.000</td><td class="r">29.500 kr</td></tr>
+  </table>
+  </div>
+  <p class="note" style="margin-top:14px">Bilens km-stand (141.000) ligger i et hul i udbuddet: Den <b>eneste</b> udbudte Titanium med lavere km-tal koster <b>71.900 kr</b>, mens de nærmeste med 31.000–47.000 km <i>mere</i> på tælleren udbydes til 44.700–54.990 kr. En bil, der reelt svarer til bilens km-stand, kan altså ikke anskaffes i intervallet omkring det statistiske estimat — den faktiske genanskaffelse af en tilsvarende eller bedre bil ligger på <b>ca. 55.000–72.000 kr</b>. Efter retspraksis skal erstatningen udgøre et beløb, der faktisk rækker til køb af en tilsvarende bil, og fastsættes "en del højere" end forhandlerens købspris (FED1998.580 V).</p>
+</section>
+
+<section>
+  <h2>Nærmeste sammenlignelige annoncer</h2>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Variant</th><th class="r">1. reg.</th><th class="r">Km</th><th class="r">Pris</th><th>Sælger</th></tr>
+    <tr class="hl"><td>Min bil: 1,0 SCTi 125 Titanium stc. (modelestimat)</td><td class="r">6/2012</td><td class="r">141.000</td><td class="r">≈ 52.300 kr</td><td>—</td></tr>
+    <tr><td>1,6 Ti-VCT 125 Titanium stc. aut.</td><td class="r">5/2013</td><td class="r">142.000</td><td class="r">57.900 kr</td><td>Forhandler</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc. ECO</td><td class="r">7/2013</td><td class="r">179.000</td><td class="r">44.700 kr</td><td>Forhandler</td></tr>
+    <tr><td>1,0 SCTi 125 Edition stc. ECO</td><td class="r">5/2013</td><td class="r">187.000</td><td class="r">44.900 kr</td><td>Forhandler</td></tr>
+    <tr><td>1,0 SCTi 100 Trend stc. ECO</td><td class="r">11/2012</td><td class="r">185.000</td><td class="r">29.800 kr</td><td>Forhandler</td></tr>
+    <tr><td>1,0 SCTi 125 Titanium stc. ECO</td><td class="r">2/2013</td><td class="r">252.000</td><td class="r">29.500 kr</td><td>Forhandler</td></tr>
+    <tr><td>1,0 SCTi 100 Edition stc. ECO</td><td class="r">7/2014</td><td class="r">179.000</td><td class="r">39.800 kr</td><td>Forhandler</td></tr>
+    <tr><td>1,6 SCTi 182 Titanium stc.</td><td class="r">9/2011</td><td class="r">230.000</td><td class="r">50.000 kr</td><td>Privat</td></tr>
+  </table>
+  </div>
+  <details open>
+    <summary>Alle 26 benzin-annoncer i datagrundlaget</summary>
+    <div class="tablewrap" style="margin-top:10px">
+    <table id="fulltab">
+      <tr><th>Variant</th><th class="r">1. reg.</th><th class="r">Km</th><th class="r">Pris</th><th>Region</th></tr>
+    </table>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>Metode og forbehold</h2>
+  <ul>
+    <li><b>Søgning:</b> bilbasen.dk → Ford Focus, stationcar, modelår 2010–2016, med anhængertræk (alle træk-typer). 40 annoncer i alt; diesel (12) og engros/CVR-annoncer (2) er frasorteret, så analysen bygger på 26 benzinbiler til detailpris.</li>
+    <li><b>Udbuds- vs. handelspris:</b> Tallene er forhandleres udbudspriser. Ved en totalskade er genanskaffelsesprisen netop, hvad en tilsvarende bil <em>udbydes</em> til — så udbudsprisen er det relevante sammenligningsgrundlag. Det svarer til fast nævnspraksis, hvorefter kontanterstatningen fastsættes til forhandler-udsalgsprisen (FED2000.4586), og til retspraksis om, at beløbet faktisk skal række til køb af en tilsvarende bil (FED1998.580 V).</li>
+    <li><b>Let ekstrapolation:</b> Bilen (1. reg. 6/2012) er marginalt ældre end den ældste 1,0 EcoBoost i stikprøven (11/2012). Effekten er lille, men de 47.700 kr forudsætter, at aldersfaldet fortsætter lineært.</li>
+    <li><b>Variant-korrektion:</b> Modellen indeholder tillæg for motorvariant (125 hk vs. 100 hk: +9.100 kr; varianten kan aflæses af gearkassen — 6 trin = 125 hk) og udstyrsniveau (Titanium: +3.200 kr). Sammenlignelige annoncer med 100 hk/5 gear skal altså korrigeres op med ca. 9.000 kr, hvis de bruges som reference.</li>
+    <li><b>Engrospriser udeladt:</b> To annoncer var mærket engros/CVR — de er prissat uden bl.a. registreringsafgift og klargøring og er derfor ikke sammenlignelige med detailpriser. De indgår ikke i analysen.</li>
+  </ul>
+</section>
+
+<footer>Udarbejdet 26. august 2026 på baggrund af 40 aktive annoncer på bilbasen.dk. Estimatet er en markedsstatistisk beregning, ikke en taksatorvurdering.</footer>
+</div>
+
+<div id="tip"></div>
+
+<script>
+// rows: [regDecimal, regLabel, km(1000s), price(kr), variant, group(0=eco retail,1=other), pricetype, region]
+const rows=[
+[2016.46,"6/2016",95,72900,"1,0 SCTi 125 Business stc.",0,"Detail","København"],
+[2013.13,"2/2013",252,29500,"1,0 SCTi 125 Titanium stc. ECO",0,"Detail","Østjylland"],
+[2014.96,"12/2014",190,52400,"1,0 SCTi 100 Titanium stc.",0,"Detail","Østjylland"],
+[2015.04,"1/2015",152,69700,"1,0 SCTi 125 Business stc.",0,"Detail","Nordjylland"],
+[2013.88,"11/2013",242,39900,"1,0 SCTi 125 Titanium stc. ECO",0,"Detail","Syd- og Sønderjylland"],
+[2015.71,"9/2015",250,34900,"1,0 SCTi 125 Trend stc.",0,"Detail","Østjylland"],
+[2015.38,"5/2015",168,54900,"1,0 SCTi 125 Edition stc.",0,"Detail","Syd- og Vestsjælland"],
+[2015.29,"4/2015",188,54990,"1,0 SCTi 125 Titanium stc.",0,"Detail","Syd- og Vestsjælland"],
+[2013.38,"5/2013",187,44900,"1,0 SCTi 125 Edition stc. ECO",0,"Detail","Syd- og Vestsjælland"],
+[2014.96,"12/2014",225.8,49900,"1,0 SCTi 125 Titanium stc.",0,"Detail","Nordjylland"],
+[2012.88,"11/2012",185,29800,"1,0 SCTi 100 Trend stc. ECO",0,"Detail","Østjylland"],
+[2015.38,"5/2015",175,59800,"1,0 SCTi 125 Trend stc.",0,"Detail","København"],
+[2016.46,"6/2016",155,62900,"1,0 SCTi 125 Business stc.",0,"Detail","Fyn"],
+[2014.88,"11/2014",251,32900,"1,0 SCTi 125 Edition stc. ECO",0,"Detail","København"],
+[2015.71,"9/2015",109,71900,"1,0 SCTi 125 Titanium stc.",0,"Detail","Syd- og Vestsjælland"],
+[2015.54,"7/2015",234.9,49900,"1,0 SCTi 125 Business stc.",0,"Detail","Nordjylland"],
+[2015.38,"5/2015",176,54700,"1,0 SCTi 125 Business stc.",0,"Detail","Nordjylland"],
+[2016.21,"3/2016",209,42900,"1,0 SCTi 100 Titanium stc.",0,"Detail","Østjylland"],
+[2013.54,"7/2013",179,44700,"1,0 SCTi 125 Titanium stc. ECO",0,"Detail","Nordjylland"],
+[2014.54,"7/2014",179,39800,"1,0 SCTi 100 Edition stc. ECO",0,"Detail","Nordjylland"],
+[2014.71,"9/2014",172,54900,"1,0 SCTi 125 Titanium stc. ECO",0,"Detail","Østjylland"],
+[2017.46,"6/2017",148,99900,"1,5 SCTi 150 Titanium stc.",1,"Detail","Syd- og Sønderjylland"],
+[2016.71,"9/2016",272,39900,"1,5 SCTi 150 Titanium stc.",1,"Detail","Østjylland"],
+[2010.04,"1/2010",187,44900,"1,6 Trend Collection stc.",1,"Detail","København"],
+[2011.71,"9/2011",230,50000,"1,6 SCTi 182 Titanium stc.",1,"Detail","Fyn"],
+[2013.38,"5/2013",142,57900,"1,6 Ti-VCT 125 Titanium stc. aut.",1,"Detail","Nordjylland"]
+];
+const MY={reg:2012.46, regLabel:"6/2012", km:141, price:52300};
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt=n=>Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".");
+
+function scatter(id, xKey, xMin, xMax, xTicks, xTickFmt, fitFn, fitLabelX){
+  const svg=document.getElementById(id);
+  const W=430,H=310,L=46,R=10,T=14,B=34;
+  const yMin=0,yMax=105; // thousand kr
+  const X=v=>L+(v-xMin)/(xMax-xMin)*(W-L-R);
+  const Y=v=>H-B-(v-yMin)/(yMax-yMin)*(H-T-B);
+  let s="";
+  for(const t of [25,50,75,100]){
+    s+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(t)}" y2="${Y(t)}"/>`;
+    s+=`<text x="${L-6}" y="${Y(t)+4}" text-anchor="end">${t}</text>`;
+  }
+  s+=`<text x="${L-6}" y="${T-2}" text-anchor="end" font-size="10">t.kr</text>`;
+  for(const t of xTicks){
+    s+=`<text x="${X(t)}" y="${H-B+16}" text-anchor="middle">${xTickFmt(t)}</text>`;
+    s+=`<line class="axis" x1="${X(t)}" x2="${X(t)}" y1="${H-B}" y2="${H-B+4}"/>`;
+  }
+  s+=`<line class="axis" x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}"/>`;
+  // fitted line (clipped to y>=5)
+  let pts=[];
+  for(let i=0;i<=40;i++){
+    const x=xMin+(xMax-xMin)*i/40, y=fitFn(x);
+    if(y>=8 && y<=104) pts.push(`${X(x).toFixed(1)},${Y(y).toFixed(1)}`);
+  }
+  s+=`<polyline class="fitline" points="${pts.join(" ")}"/>`;
+  for(const r of rows){
+    const g=r[5], cx=X(xKey==="km"?r[2]:r[0]), cy=Y(r[3]/1000);
+    const fill=g===0?css("--blue"):css("--muted-pt");
+    s+=`<circle class="pt" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="4.5" fill="${fill}" stroke="${css("--surface")}" stroke-width="1.5" data-i="${rows.indexOf(r)}"/>`;
+  }
+  const mx=X(xKey==="km"?MY.km:MY.reg), my=Y(MY.price/1000);
+  s+=`<rect x="${mx-5.5}" y="${my-5.5}" width="11" height="11" fill="${css("--orange")}" stroke="${css("--surface")}" stroke-width="1.5" transform="rotate(45 ${mx} ${my})"/>`;
+  s+=`<text class="ptlabel" x="${mx}" y="${my-11}" text-anchor="middle">min bil</text>`;
+  svg.innerHTML=s;
+}
+
+function draw(){
+  scatter("c1","km",80,290,[100,150,200,250],t=>t+"tkm",
+    km=>135.154-4.612*14.21+9.058+3.242-0.210*km, 240);
+  scatter("c2","reg",2009.6,2018,[2010,2012,2014,2016],t=>t,
+    yr=>{const age=2026.67-yr; return 135.154+9.058+3.242-0.210*141-4.612*age;}, 2015);
+}
+draw();
+const mq=window.matchMedia("(prefers-color-scheme: dark)");
+if(mq.addEventListener) mq.addEventListener("change",draw);
+
+const tip=document.getElementById("tip");
+document.addEventListener("mouseover",e=>{
+  const c=e.target.closest("circle.pt");
+  if(!c){tip.style.display="none";return;}
+  const r=rows[+c.dataset.i];
+  tip.innerHTML=`<b>${r[4]}</b><br>1. reg. ${r[1]} · ${fmt(r[2]*1000)} km<br>${fmt(r[3])} kr`;
+  tip.style.display="block";
+});
+document.addEventListener("mousemove",e=>{
+  if(tip.style.display!=="block")return;
+  const w=tip.offsetWidth;
+  tip.style.left=Math.min(e.clientX+14, innerWidth-w-8)+"px";
+  tip.style.top=(e.clientY+16)+"px";
+});
+
+const tab=document.getElementById("fulltab");
+const sorted=[...rows].sort((a,b)=>b[3]-a[3]);
+for(const r of sorted){
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${r[4]}</td><td class="r">${r[1]}</td><td class="r">${fmt(r[2]*1000)}</td><td class="r">${fmt(r[3])} kr</td><td>${r[7]}</td>`;
+  tab.appendChild(tr);
+}
+</script>
