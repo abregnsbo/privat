@@ -160,6 +160,68 @@ besiddelse**.
 - Gem dokumentation: kvitteringer for lejebil/offentlig transport, datoer for
   Trygs sagsskridt (besigtigelse, tilbud), egne rykkere.
 
+## Trygs tilbud 1/9 2026 og km-baseret modsvar
+
+**Trygs tilbud (mail 1/9 2026 fra taksator Thomas Dyrendal Nielsen, `tryg_taksator_vurdering.eml`):
+45.000 kr.** Dokumentation: 3 annoncer — bilbasen 6859693 (44.700 kr, **179.000 km** = 38.000 km
+mere end min), bilbasen 6964634 (29.800 kr, 100 hk Trend, 185.000 km), biltorvet 3068448
+(ca. 60.000 km mere). **Alle tre referencebiler har kørt 40-60.000 km mere end min bil (141.000 km).**
+
+**Km-analyse 1/9 2026** (`focus_titanium_listings.csv`, `focus_km_model.py`): alle 54 annoncer
+på bilbasen for Ford Focus stc. 1,0 Titanium, 1. reg. 2011+, benzin, med anhængertræk;
+heraf 29 Focus III (SCTi — samme generation som min; Focus IV/"EcoBoost"-badge 2018+ frasorteret).
+Prismodel med **kun km som parameter** (ikke alder), 28 retail-annoncer:
+
+> pris = 112.285 − 284 kr pr. 1.000 km, R² = 0,61 ⇒ **72.200 kr ved 141.000 km** (±10.400)
+
+Billigste Focus III med km ≤ 141.000 (jf. FED1998.580: beløbet skal RÆKKE til faktisk køb):
+- **59.000 kr** — 6984909, 1,0 SCTi 125 Titanium stc, 12/2016, præcis 141.000 km (privatsalg)
+- **71.900 kr** — 6864715, 1,0 SCTi 125 Titanium stc, 9/2015, 109.000 km (billigste **forhandler**,
+  jf. FED2000.4586: forhandler-udsalgspris er målestokken)
+
+Krydstjek: korrigeres Trygs egen referencebil 6859693 (44.700 kr, 179.000 km) for
+km-forskellen på 38.000 km med Focus III-hældningen (−284 kr/1.000 km) fås 44.700 + 10.800 ≈
+**55.500 kr** — dvs. selv Trygs egen metode giver mere end 45.000, når der korrigeres for km.
+Ingen bil i hele stikprøven med ≤ 141.000 km udbydes under 59.000 kr.
+
+### Tandrem (våd rem / "wet belt") — 1,0 EcoBoost
+
+Fords officielle interval for Focus III 1,0 EcoBoost: **10 år eller 240.000 km — det, der
+kommer først** (150.000 miles; bekræftet af flere kilder, bl.a. autodoc.dk-servicedata og
+danske Ford-værksteder; skift koster ca. 10-15.000 kr, fx bilhusetTHYBO tilbyder 9.995 kr).
+Værksteder anbefaler ofte tidligere skift (5-6 år / 100-120.000 km), fordi den oliebadede
+rem er kendt for at nedbrydes før tid, men **det officielle krav er 10 år/240.000 km**.
+I hele stikprøven (max 291.000 km) er **alderen altid det bindende krav**, ikke km.
+
+**Min rem ER skiftet i 2022, og faktura haves** (bilen er fra 6/2012 — remmen forfaldt
+aldersmæssigt juni 2022). Det giver et stærkt standargument: de billigste
+sammenligningsbiler har ikke dokumenteret remskift og står lige foran/over fristen:
+6984909 (59.000 kr, 12/2016) forfalder om ca. 3 mdr; 6864715 (71.900 kr, 9/2015) er
+**overskredet**; 6952123/6977537 (72-74.900 kr, 2017) forfalder om ca. 9 mdr. En
+"tilsvarende bil i samme stand" skal derfor have frisk rem ⇒ ca. 15.000 kr lægges til
+genanskaffelsesprisen (jf. U.2016.3075V: konkret stand justerer prisen — begge veje).
+**Fakturaen vedlægges svaret til Tryg.**
+
+### Svar til taksator (udkast 1/9 2026: `svar_taksator_udkast.txt`)
+
+Krav baseret på den billigste faktisk tilgængelige bil med ≤ 141.000 km (59.000 kr,
+privatsalg 6984909) — bevidst konservativt valgt frem for modellens 72.200 kr og
+billigste forhandler 71.900 kr (forhandler-udsalgspris er ellers målestokken, jf.
+FED2000.4586 — det er forhandlingsmæssigt "gratis" opside):
+
+| Post | Beløb |
+|---|---|
+| Billigste tilsvarende bil (141.000 km) | 59.000 kr |
+| Tandremsskift (min er skiftet 2022, faktura vedlagt) | 15.000 kr |
+| Nummerplader | 1.780 kr |
+| **I alt** | **75.780 kr** |
+
+Svaret indeholder ascii-tabel over alle 29 Focus III-annoncer sorteret efter km
+(gør km-gradienten synlig; Trygs egen referencebil markeret), links til de to
+billigste biler (begge verificeret aktive 1/9 2026), kontooplysninger (udfyld
+placeholders før afsendelse) samt forbehold: udbetaling af et ikke-aftalt beløb
+er ikke fuld og endelig afgørelse; attest og nøgler udleveres, når beløbet er aftalt.
+
 *Noter udarbejdet 26/8 2026 på baggrund af Karnov-søgninger ("genanskaffelsespris
 totalskade bil", 35 praksis-dokumenter; "afsavnserstatning bil totalskade",
 19 dokumenter) og bilbasen-analyse i denne mappe.*
