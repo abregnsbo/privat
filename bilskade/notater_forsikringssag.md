@@ -247,12 +247,11 @@ Analyse i `facelift_analyse.md` (+ `focus_facelift_listings.csv`, `focus_facelif
   sammenligningsbiler noedvendigvis nyere - skrevet ind i svarudkast 2.
 - Tandrem i de 6 same-body-annoncer (tjekket 6/9): dokumenteret skift i 6859693 (132k), 6985175
   (160k; 39.900 kr, 199k km, synet 7/2026) og 6980626 (206k, engros). IKKE i 6780078, 6919484, 6981634.
-- **Svarudkast 2 (7/9 2026, variant B): `svar_taksator_udkast2.txt`** - krav 76.330 kr =
-  6780078 (billigste same-body-bil, der kan koebes: 54.900, 172k km, ingen dokumenteret rem)
-  + km-kompensation 31.000 km x 150 = 4.650 + tandrem 15.000 + plader 1.780.
-  Argumentkaede: Trygs egen reference km-korrigeret = 52.180 (vaerdi, ikke koebbar bil) ->
-  FED1998.580/sag 53.099: beloebet skal raekke til faktisk koeb -> billigste koebbare 54.900.
-  Tidligere versioner: 71.680 (uden km-komp.), 52.180 (ref+km+plader).
+- **Svarudkast 2 (7/9 2026): `svar_taksator_udkast2.txt`** - krav 52.180 kr = Trygs egen
+  reference 6859693 (44.700, 179k km, tandrem skiftet ved 132k som min) + km-kompensation
+  38.000 km x 150 = 5.700 + plader 1.780. Rent km-argument; ingen tandremspost, ingen
+  retspraksis. Forkastede versioner: 76.330 (6780078 54.900 + km + rem + plader, dobbelt
+  kompensation), 71.680 (uden km-komp.).
 
 *Noter udarbejdet 26/8 2026 på baggrund af Karnov-søgninger ("genanskaffelsespris
 totalskade bil", 35 praksis-dokumenter; "afsavnserstatning bil totalskade",
