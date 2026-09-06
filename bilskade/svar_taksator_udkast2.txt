@@ -1,0 +1,49 @@
+﻿Emne: Re: Vedr totalskade ansvarsskade JW59371 / Tryg skade nr D2580743
+
+Hej Thomas,
+
+Tak for dit svar. Du har ret i, at de biler, jeg sendte, er nyere end min, og at årgang, motor, udstyr og km-stand skal ses samlet. Grunden er, at der ikke findes en eneste Ford Focus 1,0 EcoBoost Titanium fra 2012 til salg på Bilbasen. Søger man på Focus årgang 2011-2012 uanset karrosseri og brændstof, er der 20 biler i alt, hvoraf kun to er fra 2012 (en 1,6 benzin hatchback og en 2,0 diesel), og ingen har 1,0 EcoBoost-motoren. En sammenligning med en 2012-bil er altså ikke mulig; det nærmeste, der findes, er 2013-2014. Jeg har derfor lavet sammenligningen om, så den kun omfatter biler med præcis samme karrosseri som min: Ford Focus III før faceliftet i november 2014 (1. reg. til og med 10/2014), 1,0 EcoBoost, Titanium, stationcar, benzin, med anhængertræk. Det er samme model, samme motor og samme udstyrsniveau som min bil - og samme model som din egen referencebil 6859693.
+
+Bilbasen har dags dato (6/9 2026) seks af disse biler til salg. Sorteret efter kilometertal:
+
+     km     pris kr   1.reg   saelger     bilbasen-id
+  ----------------------------------------------------------------
+  172.000    54.900   9/2014  forhandler  6780078
+  179.000    44.700   7/2013  forhandler  6859693  <- din reference
+  199.000    39.900   6/2014  forhandler  6985175
+  242.000    39.900  11/2013  forhandler  6919484
+  254.000    26.995  11/2013  forhandler  6980626  (engros/CVR)
+  298.000    29.900   4/2013  forhandler  6981634
+  ----------------------------------------------------------------
+  min bil: 141.000 km, 1. reg 6/2012, tandrem skiftet 2022
+
+Tre ting fremgår af tabellen:
+
+1. Inden for samme model følger prisen kilometertallet tæt: fra 54.900 kr ved 172.000 km ned til ca. 30.000 kr ved 250-300.000 km. Det svarer til ca. 150 kr pr. 1.000 km.
+
+2. Ikke én af de seks biler har kørt så lidt som min. Din referencebil har kørt 38.000 km (27 %) mere end min. Alt det på en bil, der ikke udskiftes løbende - sæder, rat, gearkasse, udstødning, karrosseri - er tilsvarende mere slidt.
+
+3. Korrigeres din egen referencebil (44.700 kr, 179.000 km) for de 38.000 km med denne gradient, fås ca. 50.400 kr - med nummerplader 52.180 kr. Din egen metode giver altså over 45.000 kr, når der tages højde for kilometertallet. Men det er en beregnet værdi, ikke en bil, der kan købes: ingen bil af samme model udbydes med et kilometertal, der nærmer sig mit.
+
+Erstatningen ved en ansvarsskade skal efter praksis dække det beløb, der faktisk skal til for at købe en tilsvarende bil hos forhandler (jf. bl.a. Ankenævnet for Forsikring sag 53.099 og Vestre Landsrets dom FED1998.580). Den billigste bil af samme model, der faktisk kan købes i dag, er:
+
+54.900 kr, 172.000 km, 9/2014 (forhandler) - 31.000 km mere end min:
+https://www.bilbasen.dk/brugt/bil/ford/focus/10-scti-125-titanium-stc-eco-5d/6780078
+
+Om tandremmen: jeg er enig i, at vedligeholdelse bevarer værdien frem for at øge den. Det betyder omvendt, at en bil, hvor tandremmen ikke er skiftet, er mindre værd end en, hvor den er. Ford foreskriver skift af den oliebadede tandrem hvert 10. år eller 240.000 km. Bilen ovenfor er 12 år gammel, og annoncen dokumenterer ikke remskift; min bil fik skiftet tandrem i 2022. En bil svarende til min skal derfor have frisk tandrem. Jeg har i 2024 indhentet prisen tre steder: Ford Ballerup 15.000 kr, Autoteknik Bagsværd 15.000 kr og min egen mekaniker gennem mange år 12-14.000 kr.
+
+Mit krav er derfor:
+
+  Billigste tilsvarende bil, der kan købes (172.000 km) ..  54.900 kr
+  Km-kompensation, 31.000 km x 150 kr pr. 1.000 km .......   4.650 kr
+  Tandremsskift ..........................................  15.000 kr
+  Nummerplader ...........................................   1.780 kr
+  I alt ..................................................  76.330 kr
+
+Km-kompensationen er beregnet med den samme gradient som i punkt 1 og 3, dvs. den, der følger af markedet for præcis denne model.
+
+Jeg hører gerne fra dig.
+
+Venlig hilsen
+Axel Bogdan Bregnsbo
+Reg.nr. JW 59 371, skadenr. D258074

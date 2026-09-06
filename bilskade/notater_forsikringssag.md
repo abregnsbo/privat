@@ -222,6 +222,38 @@ billigste biler (begge verificeret aktive 1/9 2026), kontooplysninger (udfyld
 placeholders før afsendelse) samt forbehold: udbetaling af et ikke-aftalt beløb
 er ikke fuld og endelig afgørelse; attest og nøgler udleveres, når beløbet er aftalt.
 
+## Taksators svar 2/9 2026 og facelift-analyse 6/9 2026
+
+Taksator (`tryg_taksator_vurdering2.eml`) fastholder 45.000 kr: ingen af mine 28 biler er
+fra samme aargang (aeldste 4/2013), en 1-6 aar nyere bil kan ikke sammenlignes ud over km;
+hans reference 6859693 er "1 aar nyere, 40.000 km mere" og udligner. Vedligehold (tandrem)
+oeger ikke vaerdien, men bevarer den. Beder om dokumentation ud fra aargang, motor, udstyr, km.
+
+Analyse i `facelift_analyse.md` (+ `focus_facelift_listings.csv`, `focus_facelift_model.py`):
+- Focus III pre-facelift = 1. reg. <= 10/2014 (min bil); facelift Mk3.5 fra 11/2014 (Ford DK
+  pressemeddelelse 18/9 2014); skaering verificeret paa annoncefotos.
+- Ny soegning 6/9: 26 stk. 1,0 Titanium stc m. traek, heraf kun 6 pre-facelift (alle 2013-14,
+  >=172k km). Trygs reference er pre-facelift som min.
+- Facelift-tillaeg ved samme km (model A): ca. 16.700 kr. MEN med alder i modellen forsvinder
+  facelift-effekten; alder taeller ca. 7.250 kr/aar (lineaer) / 10,9 %/aar (log), ogsaa inden for
+  facelift-gruppen. 1 aar ~ 42.000 km - taksators paastand bekraeftes af markedet.
+  Aldersmodeller giver min bil 39-42k. **Facelift-argumentet boer ikke bruges.**
+- Holdbart: same-body-gruppen foelger km (R2 0,78) -> 53.600 kr ved 141k; Trygs reference
+  km-korrigeret 50.500-52.400 kr; billigste tilgaengelige same-body-bil 54.900 kr (172k km).
+  Ny billigste facelift-bil <=141k km: 6986741, 57.500 kr, 11/2016, 136k, privat.
+- Anbefalet krav ca. 65-70k (54.900 + tandrem 10-15k + plader 1.780); forligsniveau 50-55k.
+- Tjek 6/9: bilbasen Focus aargang 2011-2012, alle karrosserier/braendstof = 20 biler, 9 Titanium,
+  kun 2 fra 2012 (1,6 Ti-VCT hatchback, 2,0 TDCi stc), INGEN 1,0 EcoBoost. Derfor er alle
+  sammenligningsbiler noedvendigvis nyere - skrevet ind i svarudkast 2.
+- Tandrem i de 6 same-body-annoncer (tjekket 6/9): dokumenteret skift i 6859693 (132k), 6985175
+  (160k; 39.900 kr, 199k km, synet 7/2026) og 6980626 (206k, engros). IKKE i 6780078, 6919484, 6981634.
+- **Svarudkast 2 (7/9 2026, variant B): `svar_taksator_udkast2.txt`** - krav 76.330 kr =
+  6780078 (billigste same-body-bil, der kan koebes: 54.900, 172k km, ingen dokumenteret rem)
+  + km-kompensation 31.000 km x 150 = 4.650 + tandrem 15.000 + plader 1.780.
+  Argumentkaede: Trygs egen reference km-korrigeret = 52.180 (vaerdi, ikke koebbar bil) ->
+  FED1998.580/sag 53.099: beloebet skal raekke til faktisk koeb -> billigste koebbare 54.900.
+  Tidligere versioner: 71.680 (uden km-komp.), 52.180 (ref+km+plader).
+
 *Noter udarbejdet 26/8 2026 på baggrund af Karnov-søgninger ("genanskaffelsespris
 totalskade bil", 35 praksis-dokumenter; "afsavnserstatning bil totalskade",
 19 dokumenter) og bilbasen-analyse i denne mappe.*
